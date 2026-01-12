@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 // ✅ 1. Use HTTP for localhost (Fixes SSL Error)
 // const API_URL = "http://localhost:5000"; 
-const API_URL = 'https://bitsandbytesit.onrender.com';
+const API_URL = 'https://bitsandbytes-sb2k.onrender.com';
 const Blogs = () => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);

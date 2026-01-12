@@ -58,7 +58,7 @@ import {
 } from 'lucide-react'
 import { OptimizedImage, SkeletonCard, preloadImages } from './shared/ImageOptimizer'
 
-const BASE_API = 'https://bitsandbytesit.onrender.com'
+const BASE_API = 'https://bitsandbytes-sb2k.onrender.com'
 
 // ==================== SEO STRUCTURED DATA ====================
 const structuredData = {

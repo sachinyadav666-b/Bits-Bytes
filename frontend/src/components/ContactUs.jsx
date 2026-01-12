@@ -39,7 +39,7 @@ const Contact = () => {
     setStatus("loading");
 
     try {
-      const res = await fetch("https://bitsandbytesit.onrender.com/api/contact/submit", {
+      const res = await fetch("https://bitsandbytes-sb2k.onrender.com/api/contact/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

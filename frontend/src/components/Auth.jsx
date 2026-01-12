@@ -35,7 +35,7 @@ const Auth = () => {
 
     try {
       const res = await axios.post(
-        "https://bitsandbytesit.onrender.com/api/auth/admin/login",
+        "https://bitsandbytes-sb2k.onrender.com/api/auth/admin/login",
         formData
       );
 

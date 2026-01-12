@@ -17,7 +17,7 @@ import {
 } from 'lucide-react'
 
 // const API_URL = 'http://localhost:5000'
-const API_URL = 'https://bitsandbytesit.onrender.com'; // <-- Backend URL in-file as requested
+const API_URL = 'https://bitsandbytes-sb2k.onrender.com'; // <-- Backend URL in-file as requested
 
 const AdminPanel = () => {
   const navigate = useNavigate()

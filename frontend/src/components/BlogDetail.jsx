@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { useParams, useNavigate } from "react-router-dom";
 
-const API_URL = 'https://bitsandbytesit.onrender.com';
+const API_URL = 'https://bitsandbytes-sb2k.onrender.com';
 
 const BlogDetail = () => {
   const { slug } = useParams(); 
