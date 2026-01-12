@@ -1,0 +1,554 @@
+/* ==================== ROOT VARIABLES ==================== */
+:root {
+  --accent-color: #0EA5E9;
+  --secondary-color: #8B5CF6;
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==================== GLOBAL PERFORMANCE ==================== */
+.home-page {
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+/* Force GPU acceleration */
+.home-page section {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Content visibility for performance */
+.home-page section:not(:first-child) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* ==================== SKELETON LOADER ==================== */
+.skeleton-loader {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e8e8e8 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite ease-in-out;
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* Hero Animations */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-slide-up-delay {
+  animation: slideUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-slide-up-delay-2 {
+  animation: slideUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== ORBIT ANIMATION ==================== */
+.orbit-container {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1280px) {
+  .orbit-container {
+    width: 420px;
+    height: 420px;
+  }
+}
+
+.core-circle {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 0 60px rgba(14, 165, 233, 0.4),
+    0 0 120px rgba(139, 92, 246, 0.2);
+  z-index: 10;
+  position: relative;
+}
+
+.orbit-ring {
+  position: absolute;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  animation: spin linear infinite;
+}
+
+.orbit-1 {
+  width: 220px;
+  height: 220px;
+  animation-duration: 12s;
+}
+
+.orbit-2 {
+  width: 340px;
+  height: 340px;
+  animation-duration: 18s;
+  animation-direction: reverse;
+}
+
+.orbit-icon {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.pos-1 { top: -21px; left: 50%; transform: translateX(-50%); }
+.pos-2 { bottom: -21px; left: 50%; transform: translateX(-50%); }
+.pos-3 { left: -21px; top: 50%; transform: translateY(-50%); }
+.pos-4 { right: -21px; top: 50%; transform: translateY(-50%); }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Float animations */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 3s ease-in-out 1.5s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ==================== BRAND SECTION ==================== */
+.brand-section {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-ticker-wrapper {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.brand-track {
+  display: flex;
+  gap: 4rem;
+  animation: brand-scroll 40s linear infinite;
+  width: max-content;
+  will-change: transform;
+}
+
+.brand-logo {
+  height: 45px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: all 0.4s var(--transition-smooth);
+  flex-shrink: 0;
+}
+
+.brand-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@keyframes brand-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+/* ==================== SERVICES SECTION ==================== */
+.services-section {
+  min-height: 800px;
+  position: relative;
+  contain: layout style;
+}
+
+.service-card-wrapper {
+  min-height: 360px;
+}
+
+.service-card {
+  will-change: transform, box-shadow;
+  transition: all 0.4s var(--transition-smooth);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+/* ==================== TESTIMONIALS ==================== */
+.testimonial-wrapper {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 1.5rem;
+  animation: testimonial-scroll 50s linear infinite;
+  width: max-content;
+  will-change: transform;
+}
+
+.testimonial-track:hover {
+  animation-play-state: paused;
+}
+
+.testimonial-card {
+  min-width: 340px;
+  max-width: 340px;
+  flex-shrink: 0;
+  transition: all 0.3s var(--transition-smooth);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes testimonial-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==================== FAQ SECTION ==================== */
+.faq-item {
+  transition: all 0.3s var(--transition-smooth);
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.faq-item[open] {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== WHATSAPP BUTTON ==================== */
+.whatsapp-btn {
+  animation: whatsapp-pulse 2s ease-in-out infinite;
+}
+
+@keyframes whatsapp-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+  50% { 
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+  }
+}
+
+/* ==================== GRADIENT UTILITIES ==================== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .orbit-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .core-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .orbit-1 {
+    width: 180px;
+    height: 180px;
+  }
+
+  .orbit-2 {
+    width: 280px;
+    height: 280px;
+  }
+
+  .brand-logo {
+    height: 35px;
+    max-width: 100px;
+  }
+
+  .brand-track {
+    gap: 2.5rem;
+  }
+
+  .testimonial-card {
+    min-width: 300px;
+    max-width: 300px;
+  }
+
+  .service-card-wrapper {
+    min-height: 320px;
+  }
+}
+
+/* ==================== REDUCE MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+  .brand-track,
+  .testimonial-track,
+  .orbit-ring,
+  .animate-float,
+  .animate-float-delay,
+  .whatsapp-btn {
+    animation: none;
+  }
+
+  .skeleton-loader {
+    animation: none;
+    background: #e8e8e8;
+  }
+
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-slide-up-delay,
+  .animate-slide-up-delay-2 {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==================== SMOOTH SCROLL ==================== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==================== FOCUS STYLES ==================== */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* ==================== BRAND SECTION ==================== */
+.brand-section {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+.brand-ticker-wrapper {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  padding: 2rem 0;
+}
+
+.brand-track {
+  display: flex;
+  gap: 5rem; /* More gap for bigger logos */
+  animation: brand-scroll 35s linear infinite;
+  width: max-content;
+  will-change: transform;
+  align-items: center;
+}
+
+/* LOGO SIZE BADA KAR DIYA - 100px height */
+.brand-logo {
+  height: 100px; /* ✅ BOHOT BADA KAR DIYA */
+  width: auto;
+  max-width: 200px;
+  min-width: 150px;
+  object-fit: contain;
+  filter: grayscale(0%) !important; /* ✅ COLORED HI RAHEGA */
+  opacity: 0.8; /* ✅ THODA TRANSPARENT */
+  transition: all 0.4s var(--transition-smooth);
+  flex-shrink: 0;
+}
+
+.brand-logo:hover {
+  opacity: 1; /* ✅ HOVER PAR FULL VISIBLE */
+  filter: grayscale(0%) !important; /* ✅ COLORED HI RAHEGA */
+  transform: scale(1.15);
+}
+
+@keyframes brand-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+/* Title styling */
+.brand-section .text-center {
+  margin-bottom: 2rem;
+}
+
+.brand-section .text-xs {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+/* Mobile adjustments - size bada rahega */
+@media (max-width: 768px) {
+  .brand-logo {
+    height: 70px; /* ✅ MOBILE PE BHI BADA */
+    max-width: 140px;
+    min-width: 100px;
+  }
+  
+  .brand-track {
+    gap: 3rem;
+  }
+  
+  .brand-ticker-wrapper {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 5%,
+      black 95%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 5%,
+      black 95%,
+      transparent
+    );
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .brand-logo {
+    height: 85px;
+    max-width: 170px;
+  }
+}
+
+/* Pause animation on hover */
+.brand-track:hover {
+  animation-play-state: paused;
+}
+
+/* For reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .brand-track {
+    animation-duration: 50s;
+  }
+}

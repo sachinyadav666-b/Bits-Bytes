@@ -1,0 +1,171 @@
+/* ==================== SERVICES PAGE STYLES ==================== */
+
+:root {
+  --accent-color: #0EA5E9;
+  --secondary-color: #8B5CF6;
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==================== PAGE LAYOUT ==================== */
+.services-page {
+  background-color: rgb(248 250 252);
+  min-height: 100vh;
+}
+
+/* Background grid pattern */
+.bg-grid-pattern {
+  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* GPU acceleration for sections */
+.services-page section {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Content visibility optimization */
+.services-page section:not(:first-child) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* ==================== SKELETON LOADER ==================== */
+.skeleton-loader {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e8e8e8 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite ease-in-out;
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ==================== SERVICE CARDS ==================== */
+.service-card-link {
+  display: block;
+  height: 100%;
+  min-height: 380px;
+}
+
+.service-card {
+  will-change: transform, box-shadow;
+  transition: all 0.4s var(--transition-smooth);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+/* ==================== TRUST CARDS ==================== */
+.trust-card {
+  will-change: transform, box-shadow;
+  transition: all 0.3s var(--transition-smooth);
+}
+
+.trust-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ==================== WORKFLOW STEPS ==================== */
+.workflow-step {
+  will-change: transform, box-shadow;
+  transition: all 0.3s var(--transition-smooth);
+}
+
+.workflow-step:hover {
+  transform: translateY(-4px);
+}
+
+/* ==================== FLOATING ANIMATIONS ==================== */
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 4s ease-in-out 2s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* ==================== GRADIENT UTILITIES ==================== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==================== CTA SECTION ==================== */
+.services-page section:last-of-type .bg-gradient-to-br {
+  position: relative;
+  overflow: hidden;
+}
+
+.services-page section:last-of-type .bg-gradient-to-br::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .service-card-link {
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-card-link {
+    min-height: 320px;
+  }
+
+  .trust-card,
+  .workflow-step {
+    padding: 1.5rem;
+  }
+}
+
+/* ==================== REDUCE MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-delay {
+    animation: none;
+  }
+
+  .skeleton-loader {
+    animation: none;
+    background: #e8e8e8;
+  }
+
+  .service-card,
+  .trust-card,
+  .workflow-step {
+    transition: none;
+  }
+}
+
+/* ==================== FOCUS STYLES ==================== */
+.service-card-link:focus-visible .service-card,
+button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* ==================== SMOOTH SCROLL ==================== */
+html {
+  scroll-behavior: smooth;
+}
