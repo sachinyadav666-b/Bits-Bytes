@@ -79,7 +79,9 @@ const Contact = () => {
 
       <div className="relative min-h-screen bg-slate-50 text-slate-900 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
-          <div className="grid lg:grid-cols-2 gap-24">
+          
+          {/* MAIN GRID: HQ INFO & FORM */}
+          <div className="grid lg:grid-cols-2 gap-24 mb-24">
 
             {/* LEFT INFO + MAP */}
             <div className="space-y-5">
@@ -121,7 +123,7 @@ const Contact = () => {
                 </div>
               ))}
 
-              {/* ✅ MAP — SAME PLACE, SAME STYLE */}
+              {/* ✅ HQ MAP (NOIDA) */}
               <div className="relative mt-6">
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-[2rem] blur-lg opacity-40"></div>
 
@@ -141,7 +143,7 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* RIGHT FORM (UNCHANGED) */}
+            {/* RIGHT FORM */}
             <div className="bg-white p-10 rounded-3xl shadow-xl">
               <h2 className="text-2xl font-bold mb-8 flex items-center gap-2">
                 Send Message <MessageSquare className="text-blue-500" />
@@ -225,8 +227,104 @@ const Contact = () => {
                 </button>
               </form>
             </div>
-
           </div>
+
+          {/* ========================================================= */}
+          {/* ✅ OTHER LOCATIONS SECTION (MUMBAI, DELHI, KUWAIT) */}
+          {/* ========================================================= */}
+          <div className="border-t border-slate-200 pt-16">
+            <h3 className="text-3xl font-bold text-center text-slate-800 mb-12">
+              Other Locations
+            </h3>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              
+              {/* --- MUMBAI SECTION --- */}
+              <div className="bg-white p-5 rounded-3xl shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
+                <div className="mb-4">
+                  <h4 className="text-xl font-bold flex items-center gap-2 text-slate-900">
+                    <MapPin className="text-blue-500 w-5 h-5" /> Mumbai
+                  </h4>
+                  <p className="text-slate-500 text-sm mt-2 ml-7">
+                    Office No.02,Eastern Express Highway,Govandi Slums,Govind west,Shivaji nagar thane<br />
+                    Mumbai, Maharashtra - 400001
+                  </p>
+                </div>
+                <div className="w-full h-60 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.970977673613!2d72.9238495!3d19.065013599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c788647af037%3A0x6e589762f4719b28!2sBits%20and%20Bytes%20IT%20Solution%20in%20Mumbai!5e0!3m2!1sen!2sin!4v1768818291650!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }} 
+                    allowFullScreen="" 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Mumbai Office"
+                  ></iframe>
+                </div>
+              </div>
+
+              {/* --- DELHI SECTION --- */}
+              <div className="bg-white p-5 rounded-3xl shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
+                <div className="mb-4">
+                  <h4 className="text-xl font-bold flex items-center gap-2 text-slate-900">
+                    <MapPin className="text-blue-500 w-5 h-5" /> Delhi
+                  </h4>
+                  <p className="text-slate-500 text-sm mt-2 ml-7">
+                    B-19,Harijan Basti Block B,Mayur vihar pahse 3<br />
+                    Kondli, New Delhi - 110096
+                  </p>
+                </div>
+                <div className="w-full h-60 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.2679287256874!2d77.3312277!3d28.621731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5c6c76afcfb%3A0x6db9a9b55d34a1e3!2sBits%20and%20Bytes%20IT%20Solution%20in%20Delhi!5e0!3m2!1sen!2sin!4v1768818367219!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }} 
+                    allowFullScreen="" 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Delhi Office"
+                  ></iframe>
+                </div>
+              </div>
+
+              {/* --- KUWAIT SECTION --- */}
+              <div className="bg-white p-5 rounded-3xl shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
+                <div className="mb-4">
+                  <h4 className="text-xl font-bold flex items-center gap-2 text-slate-900">
+                    <MapPin className="text-blue-500 w-5 h-5" /> Kuwait
+                  </h4>
+                  <p className="text-slate-500 text-sm mt-2 ml-7">
+                    26/17,Block-04,Near AAA Housing fan Complex<br />
+                    mangaf, Kuwait,53704
+                  </p>
+                </div>
+                {/* Placeholder map box until you provide URL */}
+                <div className="w-full h-60 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 relative group">
+                  <iframe 
+                    src="about:blank" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }} 
+                    allowFullScreen="" 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Kuwait Office"
+                    className="bg-slate-200"
+                  ></iframe>
+                  {/* Overlay Text for Missing Map */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span className="text-slate-500 text-sm font-medium bg-white/80 px-4 py-2 rounded-full">
+                      Map Coming Soon
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </>

@@ -741,18 +741,21 @@ const ServiceCard = memo(({ service, index }) => {
   return (
     <Link to={service.link} className='group block h-full service-card-wrapper'>
       <article className='service-card bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full'>
-        {/* Image with Overlay */}
-        <div className='relative overflow-hidden'>
+        {/* Image with Fixed Dimensions */}
+        <div className='relative overflow-hidden h-48 bg-slate-50'>
           <OptimizedImage
             src={service.image}
             alt={`${service.title} - Bits and Bytes IT Solution`}
-            wrapperClassName='w-full h-48 bg-slate-50'
+            wrapperClassName='w-full h-full'
             className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-700'
+            loading='lazy'
+            width={400}
+            height={200}
           />
           <div className={`absolute inset-0 bg-gradient-to-t ${service.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
           
           {/* Icon Badge */}
-          <div className={`absolute top-4 right-4 w-12 h-12 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform`}>
+          <div className={`absolute top-4 right-4 w-12 h-12 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform z-10`}>
             <IconComponent size={22} />
           </div>
         </div>
@@ -980,16 +983,23 @@ const Home = () => {
             Trusted by Innovative Companies Across India
           </span>
         </div>
-        <div className='brand-ticker-wrapper'>
-          <div className='brand-track'>
-            {[...BRANDS, ...BRANDS, ...BRANDS].map((logo, i) => (
-              <img 
-                key={i} 
-                src={logo} 
-                alt='Trusted Partner' 
-                loading='eager' 
-                className='brand-logo' 
-              />
+        <div className='brand-ticker-wrapper overflow-hidden'>
+          <div className='brand-track flex animate-brand-scroll'>
+            {[...BRANDS, ...BRANDS].map((logo, i) => (
+              <div key={i} className='flex-shrink-0 px-6'>
+                <img 
+                  src={logo} 
+                  alt='Trusted Partner' 
+                  loading='lazy'
+                  className='brand-logo'
+                  style={{
+                    width: '140px',
+                    height: '60px',
+                    objectFit: 'contain',
+                    objectPosition: 'center'
+                  }}
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -1042,37 +1052,57 @@ const Home = () => {
             </div>
 
             {/* Right Image - Growth Chart */}
-            <div className='relative'>
-              <div className='absolute -top-6 -right-6 w-40 h-40 bg-green-500/10 rounded-full blur-3xl' />
-              <div className='bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-100 shadow-lg'>
-                <div className='text-center mb-6'>
-                  <div className='inline-flex items-center gap-2 px-4 py-2 mb-2 bg-white rounded-full text-green-600 text-sm font-bold'>
-                    📈 Growth Timeline
-                  </div>
-                  <h3 className='text-xl font-bold text-slate-900'>Typical Growth Journey</h3>
-                </div>
-                
-                {/* Timeline Visualization */}
-                <div className='space-y-6'>
-                  {[
-                    { month: 'Month 1', metric: '20-30%', desc: 'Traffic Increase' },
-                    { month: 'Month 2', metric: '40-50%', desc: 'Lead Generation' },
-                    { month: 'Month 3', metric: '70-100%', desc: 'Revenue Growth' },
-                    { month: 'Month 6', metric: '200-300%', desc: 'ROI Achieved' }
-                  ].map((item, i) => (
-                    <div key={i} className='flex items-center gap-4'>
-                      <div className='w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white font-bold shadow-lg'>
-                        {item.month}
-                      </div>
-                      <div className='flex-1'>
-                        <div className='text-2xl font-black text-green-600'>{item.metric}</div>
-                        <div className='text-slate-600'>{item.desc}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <div className="relative">
+  <div className="absolute -top-6 -right-6 w-40 h-40 bg-green-500/10 rounded-full blur-3xl" />
+
+  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-100 shadow-lg">
+    <div className="text-center mb-6">
+      <div className="inline-flex items-center gap-2 px-4 py-2 mb-2 bg-white rounded-full text-green-600 text-sm font-bold">
+        📈 Growth Timeline
+      </div>
+
+      <h3 className="text-xl font-bold text-slate-900">
+        Typical Growth Journey
+      </h3>
+    </div>
+
+    {/* Timeline Visualization */}
+
+    <div className="space-y-6">
+      {[
+        { month: "Month 1", metric: "20-30%", desc: "Traffic Increase" },
+        { month: "Month 2", metric: "40-50%", desc: "Lead Generation" },
+        { month: "Month 3", metric: "70-100%", desc: "Revenue Growth" },
+        { month: "Month 6", metric: "200-300%", desc: "ROI Achieved" },
+      ].map((item, i) => {
+        // "Month 1" ko split karke alag kar rahe hain taaki design better ho
+        const [label, number] = item.month.split(" "); 
+
+        return (
+          <div key={i} className="flex items-center gap-4">
+            {/* Box Design Updated */}
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 flex flex-col items-center justify-center text-white shadow-lg shrink-0">
+              <span className="text-[10px] font-medium uppercase tracking-wide opacity-90">
+                {label}
+              </span>
+              <span className="text-2xl font-bold leading-none">
+                {number}
+              </span>
             </div>
+
+            <div className="flex-1">
+              <div className="text-2xl font-black text-green-600">
+                {item.metric}
+              </div>
+
+              <div className="text-slate-600">{item.desc}</div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</div>
 
           </div>
 
@@ -1161,6 +1191,8 @@ const Home = () => {
                   src='https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800'
                   alt='Bits and Bytes IT Solution Team'
                   className='w-full h-64 object-cover'
+                  width={600}
+                  height={300}
                 />
                 <div className='bg-white p-6'>
                   <div className='grid grid-cols-3 gap-4 mb-4'>
@@ -1760,6 +1792,7 @@ const Home = () => {
                 alt='Contact Bits and Bytes IT Solution'
                 className='w-full h-full object-cover'
                 loading='lazy'
+                style={{ height: '400px', objectFit: 'cover' }}
               />
               <div className='absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent' />
               <div className='absolute bottom-6 left-6 text-white'>
@@ -1918,4 +1951,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Home

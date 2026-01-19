@@ -552,3 +552,148 @@ select:focus-visible {
     animation-duration: 50s;
   }
 }
+
+/* Home.css */
+
+/* Service card image fix */
+.service-card-wrapper img {
+  width: 100% !important;
+  height: 200px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Brand slider */
+.brand-ticker-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.brand-track {
+  display: flex;
+  animation: brand-scroll 30s linear infinite;
+  will-change: transform;
+  padding: 10px 0;
+}
+
+.brand-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes brand-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.brand-logo {
+  width: 140px !important;
+  height: 60px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.brand-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Testimonial slider */
+.testimonial-wrapper {
+  overflow: hidden;
+  position: relative;
+  margin: 0 -16px;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  animation: testimonial-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+@keyframes testimonial-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Animation for skeleton loading */
+@keyframes skeleton-wave {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-skeleton-wave {
+  animation: skeleton-wave 2s ease-in-out infinite;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+}
+
+/* Floating animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float-delay {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float-delay 4s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .service-card-wrapper img {
+    height: 180px !important;
+  }
+  
+  .brand-logo {
+    width: 100px !important;
+    height: 50px !important;
+  }
+  
+  .testimonial-track {
+    animation-duration: 50s;
+  }
+}
+
+/* Image hover effects */
+.service-card:hover img {
+  transform: scale(1.1) !important;
+}
+
+/* Ensure all images have proper dimensions */
+.home-page img {
+  max-width: 100%;
+  height: auto;
+}

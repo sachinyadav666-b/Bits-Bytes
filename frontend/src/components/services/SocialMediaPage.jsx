@@ -443,7 +443,7 @@ export default function SocialMediaPage() {
             {/* LEFT SIDE: UNIQUE IMAGE */}
             <div className="bb-process-left-img">
                 <img 
-                    src="https://images.unsplash.com/photo-1611926653458-09294b3019dc?auto=format&fit=crop&w=1080&q=80"
+                    src="https://media.istockphoto.com/id/1521121126/photo/group-of-happy-traditional-indian-women-standing-in-queue-showing-their-finger-marked-with.jpg?s=612x612&w=0&k=20&c=kiT9EwcW_1Qdj_ZniNPialfI7PkrIoJ29pZo_O2Wwz8="
                     alt="Social Media Strategy Process"
                     className="bb-unique-audit-img"
                 />

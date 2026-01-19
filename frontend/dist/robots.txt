@@ -1,0 +1,109 @@
+# Robots.txt for Bits and Bytes IT Solution
+# https://www.bitsandbytesitsolution.com
+# Digital Marketing Agency in Noida, Delhi NCR & All India
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+Allow: /about-us
+Allow: /services
+Allow: /services/
+Allow: /web-development/
+Allow: /app-development/
+Allow: /ui-ux/
+Allow: /ecommerce/
+Allow: /projects
+Allow: /blogs
+Allow: /contact-us
+
+# Disallow admin and authentication pages
+Disallow: /admin
+Disallow: /login
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /node_modules/
+
+# Crawl delay for all bots (be polite)
+Crawl-delay: 1
+
+# Google specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Google Image Bot
+User-agent: Googlebot-Image
+Allow: /img/
+Allow: /*.webp$
+Allow: /*.avif$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.svg$
+
+# Bing specific rules
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Bing Image Bot
+User-agent: msnbot-media
+Allow: /img/
+
+# Yahoo specific
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# Facebook crawler for Open Graph
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitter card crawler
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn crawler
+User-agent: LinkedInBot
+Allow: /
+
+# Pinterest crawler
+User-agent: Pinterest
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://www.bitsandbytesitsolution.com/sitemap.xml
+
+# Host directive (some crawlers use this)
+Host: https://www.bitsandbytesitsolution.com
