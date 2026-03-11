@@ -32,7 +32,7 @@ import SeoAudit from './components/services/SeoAudit'
 import MetaAdsPage from './components/services/MetaAdsPage'
 import GoogleAdsPage from './components/services/GoogleAdsPage'
 import SocialMediaPage from './components/services/SocialMediaPage'
-import politicalparty from './components/services/politicalparty'
+import PoliticalParty from './components/services/politicalparty'
 
 import CrossPlatformPage from './components/services/AppDevelopment/CrossPlatformPage'
 import AppUIUXPage from './components/services/Appdevelopment/AppUIUXPage'
@@ -61,6 +61,11 @@ import InventoryPage from './components/services/Ecommerce/InventoryPage'
 import PaymentGatewayPage from './components/services/Ecommerce/PaymentGatewayPage'
 import ShippingPage from './components/services/Ecommerce/ShippingPage'
 import StoreDesignPage from './components/services/Ecommerce/StoreDesignPage'
+import SeoPackage from './components/packages/SeoPackage'
+import EcommercePackages from './components/packages/EcommercePackages'
+import WebPackages from './components/packages/WebPackages'
+import PpcPackages from './components/packages/PpcPackages'
+import SmoPackages from './components/packages/SmoPackages'
 
 
 
@@ -219,11 +224,18 @@ function App () {
             />
             <Route
               path='/services/political-party'
-              element={<SocialMediaPage />}
+              element={<PoliticalParty />}
             />
           </Route>
 
+          <Route path='/packages/seo-packages' element={<SeoPackage />} />
+          <Route path='/packages/ecommerce-packages' element={<EcommercePackages />} />
+          <Route path='/packages/ppc-packages' element={<PpcPackages />} />
+          <Route path='/packages/ppc-packages' element={<PpcPackages />} />
+          <Route path='/packages/smo-packages' element={<SmoPackages />} />
+          <Route path='/packages/web-packages' element={<WebPackages />} />
           <Route path='/projects' element={<Projects />} />
+          {/* <Route path='/projects' element={<Projects />} /> */}
           <Route path='/admin' element={<AdminPanel />} />
 
           {/* Auth Routes */}

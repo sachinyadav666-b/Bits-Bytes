@@ -65,7 +65,7 @@ export default function ECommercePage() {
       <SEOHead title={pageTitle} description={pageDescription} keywords={pageKeywords} canonical="/services/e-commerce" breadcrumbs={breadcrumbs} structuredData={faqSchema} />
       <main className='bg-white text-slate-900 overflow-hidden'>
         {/* Hero */}
-        <section className='relative py-20 lg:py-32 overflow-hidden'>
+        <section className='relative py-20 lg:py-12 overflow-hidden'>
           <div className='absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-emerald-100 via-green-50 to-transparent rounded-full -translate-y-1/2 translate-x-1/4 opacity-60' />
           <div className='absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-cyan-100 via-blue-50 to-transparent rounded-full translate-y-1/2 -translate-x-1/4 opacity-60' />
           <div className='container mx-auto px-4 md:px-6 relative z-10'>
@@ -114,22 +114,53 @@ export default function ECommercePage() {
         </section>
 
         {/* Platforms */}
-        <section className='py-20 bg-white'>
-          <div className='container mx-auto px-4 md:px-6'>
-            <div className='grid lg:grid-cols-2 gap-12 items-center'>
-              <div>
-                <h2 className='text-3xl md:text-4xl font-black text-slate-900 mb-6'>E-Commerce <span className='text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-600'>Platforms We Work With</span></h2>
-                <p className='text-lg text-slate-600 mb-6 leading-relaxed'>We work with all major e-commerce platforms and can help you choose the best one for your business. Whether you need quick launch or custom capabilities, we have you covered.</p>
-                <div className='grid grid-cols-2 gap-4'>
-                  {platforms.map((platform, i) => (<div key={i} className='bg-slate-50 rounded-2xl p-4 hover:shadow-lg transition-all'><h4 className='font-bold text-slate-900 mb-1'>{platform.name}</h4><p className='text-xs text-slate-500'>{platform.desc}</p></div>))}
-                </div>
-              </div>
-              <div className='grid grid-cols-2 gap-4'>
-                {clientTypes.map((item, i) => (<div key={i} className='bg-emerald-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all'><item.icon size={32} className='mx-auto mb-3 text-emerald-500' /><div className='text-lg font-bold text-slate-900'>{item.label}</div><div className='text-sm text-slate-500'>{item.desc}</div></div>))}
-              </div>
+       <section className='py-20 bg-white'>
+  <div className='container mx-auto px-4 md:px-6'>
+    <div className='grid lg:grid-cols-2 gap-12 items-center'>
+      <div>
+        <h2 className='text-3xl md:text-4xl font-black text-slate-900 mb-6'>
+          E-Commerce <span className='text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-600'>Platforms We Work With</span>
+        </h2>
+        <p className='text-lg text-slate-600 mb-6 leading-relaxed'>
+          We work with all major e-commerce platforms and can help you choose the best one for your business. Whether you need quick launch or custom capabilities, we have you covered.
+        </p>
+        <div className='grid grid-cols-2 gap-4'>
+          {platforms.map((platform, i) => (
+            <div key={i} className='bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-5 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border border-emerald-100'>
+              <h4 className='font-bold text-slate-900 mb-2 text-lg'>{platform.name}</h4>
+              <p className='text-sm text-slate-600'>{platform.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* UPDATED CARDS WITH INCREASED SIZE - Emerald/Green Theme */}
+      <div className='grid grid-cols-2 gap-5'>
+        {clientTypes.map((item, i) => (
+          <div 
+            key={i} 
+            className='bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-7 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-emerald-100 hover:border-emerald-300 group'
+          >
+            {/* Icon Container - Bigger */}
+            <div className='mb-5 p-4 bg-gradient-to-r from-emerald-100 to-green-100 rounded-full w-20 h-20 mx-auto flex items-center justify-center group-hover:scale-110 transition-transform duration-300'>
+              <item.icon size={38} className='text-emerald-600' />
+            </div>
+            
+            {/* Title - Bigger */}
+            <div className='text-xl font-black text-slate-900 mb-3 group-hover:text-emerald-700 transition-colors'>
+              {item.label}
+            </div>
+            
+            {/* Description - Bigger */}
+            <div className='text-base text-slate-600 leading-relaxed'>
+              {item.desc}
             </div>
           </div>
-        </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Services Grid */}
        <section className='py-20 bg-slate-50'>

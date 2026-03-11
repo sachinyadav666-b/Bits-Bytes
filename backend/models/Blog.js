@@ -3,14 +3,14 @@ import mongoose from "mongoose";
 const blogSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
-    slug: { type: String, required: true, unique: true }, // 🔥 Ye add kiya hai (URL ke liye)
+    slug: { type: String, required: true, unique: true },
     category: { type: String, required: true },
-    content: { type: String, required: true },
-    image: { type: String, required: true },
+    content: { type: String },
     tags: [String],
-    featured: { type: Boolean, default: false },
     author: { type: String, default: "Admin" },
-    status: { type: String, default: "Published" }
+    status: { type: String, default: "Published" },
+    image: String,
+    imagePublicId: String,
   },
   { timestamps: true }
 );

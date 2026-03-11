@@ -60,7 +60,7 @@ export default function PushNotificationsPage() {
       <SEOHead title={pageTitle} description={pageDescription} keywords={pageKeywords} canonical="/app-development/push-notifications" breadcrumbs={breadcrumbs} structuredData={faqSchema} />
       <main className='bg-white text-slate-900 overflow-hidden'>
         {/* Hero */}
-        <section className='relative py-20 lg:py-32 overflow-hidden'>
+        <section className='relative py-20 lg:py-12 overflow-hidden'>
           <div className='absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-orange-100 via-amber-50 to-transparent rounded-full -translate-y-1/2 translate-x-1/4 opacity-60' />
           <div className='container mx-auto px-4 md:px-6 relative z-10'>
             <nav className='mb-8'><ol className='flex items-center gap-2 text-sm text-slate-500 flex-wrap'>{breadcrumbs.map((item, i) => (<li key={i} className='flex items-center gap-2'>{i > 0 && <span>/</span>}{i === breadcrumbs.length - 1 ? (<span className='text-orange-600 font-medium'>{item.name}</span>) : (<Link to={item.url} className='hover:text-orange-600 transition-colors'>{item.name}</Link>)}</li>))}</ol></nav>

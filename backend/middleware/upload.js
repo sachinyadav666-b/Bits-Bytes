@@ -1,30 +1,27 @@
-import multer from "multer";
-import cloudinary from "cloudinary";
 import dotenv from "dotenv";
-import pkg from "multer-storage-cloudinary";
-
 dotenv.config();
 
+import multer from "multer";
+import cloudinary from "cloudinary";
+import pkg from "multer-storage-cloudinary";
+
 const { v2: cloudinaryV2 } = cloudinary;
+const CloudinaryStorage = pkg.CloudinaryStorage || pkg.default || pkg;
 
-// ✅ FIX: constructor safely resolve karo
-const CloudinaryStorage =
-  pkg.CloudinaryStorage || pkg.default || pkg;
+// 🔍 Debug (remove later)
+console.log("Cloudinary API KEY:", process.env.CLOUDINARY_API_KEY);
 
-// Cloudinary Config
 cloudinaryV2.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// Storage Engine
 const storage = new CloudinaryStorage({
   cloudinary: cloudinaryV2,
   params: {
     folder: "blog_images",
     allowed_formats: ["jpg", "jpeg", "png", "webp"],
-    resource_type: "image",
   },
 });
 

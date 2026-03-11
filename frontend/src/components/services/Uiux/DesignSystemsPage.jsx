@@ -26,7 +26,7 @@ export default function DesignSystemsPage() {
     <>
       <SEOHead title='Design Systems Services - Component Libraries | Bits and Bytes' description='Professional design system services in Noida, Delhi NCR. Component libraries, style guides, documentation. Scalable, consistent design. Get free consultation!' keywords='design systems India, component library Noida, style guide Delhi NCR' canonical="/ui-ux-design/design-systems" breadcrumbs={breadcrumbs} structuredData={faqSchema} />
       <main className='bg-white text-slate-900 overflow-hidden'>
-        <section className='relative py-20 lg:py-32 overflow-hidden'>
+        <section className='relative py-20 lg:py-12 overflow-hidden'>
           <div className='absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-green-100 via-emerald-50 to-transparent rounded-full -translate-y-1/2 translate-x-1/4 opacity-60' />
           <div className='container mx-auto px-4 md:px-6 relative z-10'>
             <nav className='mb-8'><ol className='flex items-center gap-2 text-sm text-slate-500 flex-wrap'>{breadcrumbs.map((item, i) => (<li key={i} className='flex items-center gap-2'>{i > 0 && <span>/</span>}{i === breadcrumbs.length - 1 ? (<span className='text-green-600 font-medium'>{item.name}</span>) : (<Link to={item.url} className='hover:text-green-600 transition-colors'>{item.name}</Link>)}</li>))}</ol></nav>

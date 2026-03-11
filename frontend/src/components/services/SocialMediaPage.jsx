@@ -9,86 +9,62 @@ import {
 } from '../SharedComponents';
 
 export default function SocialMediaPage() {
-  const accentColor = '#0EA5E9'; // ✅ Updated to Brand Blue
+  const accentColor = '#0EA5E9'; // Brand Blue
 
-  // --- 1. FEATURES DATA (Updated with Images) ---
+  // --- 1. FEATURES DATA (Updated with Your Specific Services) ---
   const features = [
     {
       image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80",
-      title: "Content Strategy",
-      description: "Data-driven content calendars aligned with your brand voice and audience preferences. We research trending topics, optimal posting times, and content formats that drive maximum engagement for your industry."
+      title: "Get Instagram Followers",
+      description: "Grow a real and relevant audience. Our strategy includes profile optimization, reels, stories, and engagement targeting to get followers genuinely interested in your brand."
+    },
+    {
+      image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=600&q=80",
+      title: "Get Facebook Followers",
+      description: "Increase page likes and follower growth with targeted audiences. We use local interest-based targeting and video promotions to turn followers into customers."
+    },
+    {
+      image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=600&q=80",
+      title: "Get YouTube Subscribers",
+      description: "The best platform for long-term visibility. We optimize your channel and videos to drive consistent subscriber growth and improve watch-time engagement."
+    },
+    {
+      image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80",
+      title: "Startup Brand Building",
+      description: "For new brands, social media is the quickest way to get noticed. We create your brand identity, content calendar, and growth campaigns to establish credibility from day one."
     },
     {
       image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80",
-      title: "Creative Design",
-      description: "Scroll-stopping graphics, reels, stories, and carousels that drive engagement. Our design team creates professional visual content that stands out in crowded feeds and represents your brand beautifully."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80",
-      title: "Community Management",
-      description: "Active engagement with your audience through comments, DMs, and mentions. We build relationships with your followers, respond promptly to inquiries, and nurture your online community."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=600&q=80",
-      title: "Influencer Marketing",
-      description: "Strategic collaborations with relevant influencers to amplify your brand reach. We identify, negotiate, and manage influencer partnerships that deliver authentic engagement and measurable results."
+      title: "Content Creation Strategy",
+      description: "Content is at the heart of success. We handle creative posts, banners, reels, and educational content that resonates with your audience based on trends."
     },
     {
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
-      title: "Analytics & Reporting",
-      description: "Comprehensive monthly reports with insights on growth, engagement, reach, and ROI metrics. Track your social media performance with actionable data and recommendations for improvement."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80",
-      title: "Reputation Management",
-      description: "Monitor and manage your brand's online reputation across all platforms. We track mentions, respond to reviews, handle negative feedback professionally, and protect your brand image."
+      title: "Paid Social Media Ads",
+      description: "Speed up your growth with ROI-focused Instagram, Facebook, and YouTube Ads. We drive faster follower growth, better reach, and high-quality leads."
     }
   ];
 
-  // --- PLATFORM DETAILS FOR SEO ---
-  const platformDetails = [
-    { name: "Instagram", users: "500M+ daily users in India", best: "Visual brands, lifestyle, fashion, food, travel" },
-    { name: "Facebook", users: "400M+ users in India", best: "Local businesses, community building, events" },
-    { name: "LinkedIn", users: "100M+ professionals in India", best: "B2B, recruiting, thought leadership" },
-    { name: "YouTube", users: "500M+ users in India", best: "Tutorials, reviews, entertainment, education" },
-    { name: "Twitter/X", users: "25M+ users in India", best: "News, customer service, real-time engagement" },
-    { name: "Pinterest", users: "Growing in India", best: "DIY, home decor, fashion, weddings" }
+  // --- PLATFORMS ---
+  const platforms = [
+    "Instagram", "Facebook", "YouTube", "LinkedIn", "Twitter/X", "Pinterest", "Snapchat", "Threads"
   ];
 
-  // --- CONTENT TYPES ---
-  const contentTypes = [
-    { type: "Static Posts", description: "High-quality images with engaging captions optimized for each platform" },
-    { type: "Reels & Short Videos", description: "Trending format videos under 90 seconds for maximum reach and virality" },
-    { type: "Stories", description: "Daily ephemeral content with polls, questions, and interactive stickers" },
-    { type: "Carousels", description: "Multi-slide educational and storytelling content that increases save rates" },
-    { type: "Live Sessions", description: "Real-time engagement through Q&As, product launches, and behind-the-scenes" },
-    { type: "User-Generated Content", description: "Curating and sharing customer content to build social proof" }
-  ];
-
-  // --- 2. PROCESS DATA ---
+  // --- 2. PROCESS DATA (Aligned with your Tracking & Strategy) ---
   const process = [
-    { title: "Brand Audit", description: "We analyze your current social presence, competitors, audience demographics, and identify growth opportunities across all relevant platforms." },
-    { title: "Strategy Development", description: "Custom content strategy, posting schedule, hashtag strategy, and engagement tactics tailored to your specific business goals and target audience." },
-    { title: "Content Creation", description: "Our creative team produces high-quality graphics, videos, reels, and copy that resonates with your target audience and represents your brand." },
-    { title: "Publish & Engage", description: "Strategic posting at optimal times, active community management, responding to comments and DMs, and continuous optimization." },
-    { title: "Analyze & Optimize", description: "Monthly performance reviews, A/B testing, strategy refinement based on data, and continuous improvement for better results." }
+    { title: "Strategy & Identity", description: "We select the right platforms (Insta, FB, YouTube) and create a branding identity tailored to your business goals." },
+    { title: "Content Planning", description: "Developing a content calendar including Creative Posts, Reels, Stories, and Promotional content that resonates." },
+    { title: "Organic Growth", description: "Implementing profile optimization, hashtag research, and community engagement to build a loyal following naturally." },
+    { title: "Paid Acceleration", description: "Running targeted Ads for faster follower growth, better reach, and generating leads or traffic." },
+    { title: "Performance Tracking", description: "We track everything—Follower growth, Reach, Engagement, and Campaign ROI—giving you clear reports with real numbers." }
   ];
 
   const faqs = [
-    { question: "Which platforms do you manage?", answer: "We manage Instagram, Facebook, LinkedIn, Twitter/X, YouTube, Pinterest, and emerging platforms like Threads. We'll recommend the best platforms based on your business, industry, and target audience." },
-    { question: "How much does social media management cost?", answer: "Our packages start from ₹25,000/month for basic management (2 platforms, 15 posts) to ₹1,00,000+/month for comprehensive multi-platform management with daily content, reels, and influencer outreach." },
-    { question: "How many posts do you create per month?", answer: "Depending on the package: Starter (15 posts/month), Growth (25 posts/month + 4 reels), Premium (40+ posts/month + 8 reels + stories). All packages include a content calendar for approval." },
-    { question: "Do you provide content only or also post and manage?", answer: "We provide end-to-end service: strategy development, content creation, scheduling, posting, community management, engagement, and monthly reporting. You approve, we execute." },
-    { question: "How do you measure success?", answer: "We track follower growth, engagement rate, reach, impressions, website traffic from social, lead generation, and ultimately ROI based on your specific goals. Monthly reports show all KPIs." },
-    { question: "Do you create video content and reels?", answer: "Yes! Video content is essential today. We create professional reels, short videos, stories, and can manage YouTube content. Our team handles scripting, shooting guides, and editing." },
-    { question: "Can you handle negative comments and reviews?", answer: "Absolutely. Our community managers are trained in reputation management. We respond professionally to negative feedback, escalate issues when needed, and protect your brand image." },
-    { question: "Do you work with influencers?", answer: "Yes! We identify relevant influencers in your niche, negotiate partnerships, manage campaigns, and track performance. Influencer marketing is available in our Growth and Premium packages." },
-    { question: "What industries do you specialize in?", answer: "We have experience across e-commerce, education, healthcare, real estate, hospitality, B2B services, and more. Each industry gets customized content strategies based on audience behavior." },
-    { question: "How quickly can you start?", answer: "Once onboarded, we can begin content creation within 1 week. The first month involves strategy development and setting up content workflows. Full execution starts from month 2." }
-  ];
-
-  const platforms = [
-    "Instagram", "Facebook", "LinkedIn", "Twitter/X", "YouTube", "Pinterest", "Threads", "WhatsApp Business"
+    { question: "How does Social Media Marketing help my business?", answer: "It raises brand awareness, develops trust with customers, attracts website traffic, and allows you to promote products directly to your audience." },
+    { question: "Do you provide real Instagram followers?", answer: "Yes. Our 'Get Instagram Followers Service' focuses on organic growth strategies and targeted engagement to attract real, relevant users, not bots." },
+    { question: "Can you help grow my YouTube channel?", answer: "Absolutely. Our 'Get YouTube Subscribers Service' includes video optimization, audience targeting, and watch-time improvement strategies." },
+    { question: "I am a startup. How can you help?", answer: "We specialize in helping startups establish an online presence from scratch, creating a professional brand identity and initial follower base to build credibility." },
+    
   ];
 
   return (
@@ -178,7 +154,7 @@ export default function SocialMediaPage() {
           50% { transform: translateY(-10px); }
         }
 
-        /* --- ✅ CUSTOM CARD STYLES (Features) --- */
+        /* --- CUSTOM CARD STYLES (Features) --- */
         .bb-svc-features-grid {
           display: grid;
           grid-template-columns: 1fr;
@@ -238,7 +214,7 @@ export default function SocialMediaPage() {
             margin-bottom: 1rem;
         }
 
-        /* --- ✅ UNIQUE PROCESS SECTION STYLES --- */
+        /* --- UNIQUE PROCESS SECTION STYLES --- */
         .bb-process-unique-section {
           padding: 80px 20px;
           background: #f8fafc;
@@ -340,15 +316,15 @@ export default function SocialMediaPage() {
         <div className="bb-svc-hero-content">
           <div className="bb-svc-hero-text">
             <div style={{ display: 'inline-block', padding: '6px 16px', background: 'rgba(14, 165, 233, 0.15)', color: '#38bdf8', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 'bold', marginBottom: '15px', letterSpacing: '0.05em' }}>
-              📱 SOCIAL MEDIA MARKETING
+              📱 SOCIAL MEDIA MARKETING IN NOIDA
             </div>
-            <h1>Build Your Brand on <br/><span style={{color: accentColor}}>Social Media</span></h1>
-            <p>Strategic social media management that grows your audience, builds community, and drives real business results.</p>
+            <h1>Grow Your Brand, Followers & <br/><span style={{color: accentColor}}>Online Influence</span></h1>
+            <p>If brand visibility, trust, and daily engagement are what you want, our social media strategies for Instagram, Facebook, and YouTube are the most powerful solution.</p>
 
             <div className="bb-svc-hero-buttons">
               <Link to="/contact-us">
                 <button className="bb-svc-btn-primary" style={{background: `linear-gradient(135deg, ${accentColor}, #3b82f6)`, color: 'white', border: 'none'}}>
-                  Get Started
+                  Grow Your Brand
                 </button>
               </Link>
               <Link to="/projects">
@@ -385,20 +361,20 @@ export default function SocialMediaPage() {
       <section className="bb-svc-stats-section">
         <div className="bb-svc-stats-grid">
           <div className="bb-svc-stat-card">
-            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={5} suffix="M+" /></div>
-            <div className="bb-svc-stat-label">Followers Grown</div>
+            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={100} suffix="%" /></div>
+            <div className="bb-svc-stat-label">Brand Growth</div>
           </div>
           <div className="bb-svc-stat-card">
-            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={100} suffix="+" /></div>
-            <div className="bb-svc-stat-label">Brands Managed</div>
+            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={10} suffix="X" /></div>
+            <div className="bb-svc-stat-label">Better Engagement</div>
           </div>
           <div className="bb-svc-stat-card">
-            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={500} suffix="K+" /></div>
-            <div className="bb-svc-stat-label">Engagements/Month</div>
+            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={24} suffix="/7" /></div>
+            <div className="bb-svc-stat-label">Active Presence</div>
           </div>
           <div className="bb-svc-stat-card">
-            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={8} suffix="%" /></div>
-            <div className="bb-svc-stat-label">Avg. Engagement Rate</div>
+            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={500} suffix="+" /></div>
+            <div className="bb-svc-stat-label">Clients Served</div>
           </div>
         </div>
       </section>
@@ -415,11 +391,11 @@ export default function SocialMediaPage() {
         </div>
       </div>
 
-      {/* ✅ FEATURES SECTION (UPDATED WITH IMAGES) */}
+      {/* FEATURES SECTION */}
       <section className="bb-svc-features-section">
         <div className="bb-svc-section-header">
-          <h2>Complete Social Media Solution</h2>
-          <p>Everything you need to dominate social media.</p>
+          <h2>Organic & Paid Growth Services</h2>
+          <p>Comprehensive solutions to get Instagram followers, Facebook likes, and YouTube subscribers.</p>
         </div>
         <div className="bb-svc-features-grid">
           {features.map((f, i) => (
@@ -436,7 +412,7 @@ export default function SocialMediaPage() {
         </div>
       </section>
 
-      {/* ✅ UNIQUE PROCESS SECTION (SPLIT LAYOUT) */}
+      {/* UNIQUE PROCESS SECTION */}
       <section className="bb-process-unique-section">
         <div className="bb-process-split-container">
             
@@ -451,8 +427,8 @@ export default function SocialMediaPage() {
 
             {/* RIGHT SIDE: TIMELINE CONTENT */}
             <div className="bb-process-right-content">
-                <h2>Our Process</h2>
-                <p className="lead">A strategic approach to social media success. Consistent growth through proven methods.</p>
+                <h2>Our Strategy</h2>
+                <p className="lead">Good content + correct strategy = excellent growth. We develop and manage content that resonates with your audience.</p>
 
                 <div className="bb-audit-timeline">
                     {process.map((step, index) => (
@@ -478,9 +454,9 @@ export default function SocialMediaPage() {
           <h2>Client Success Stories</h2>
         </div>
         <div className="bb-svc-testimonials-grid">
-          <TestimonialCard quote="Our Instagram grew from 5K to 50K followers in 6 months. The content quality is exceptional!" author="Nisha Agarwal" role="Founder, StyleQueen" avatar="NA" />
-          <TestimonialCard quote="They transformed our LinkedIn presence. We now generate 20+ qualified leads monthly from social." author="Karan Singh" role="CEO, B2B Solutions" avatar="KS" />
-          <TestimonialCard quote="The team's creativity and consistency has made us a recognizable brand in our industry." author="Meera Patel" role="Marketing Director, FoodieHub" avatar="MP" />
+          <TestimonialCard quote="Our Instagram followers doubled in 3 months! The reel content they create is engaging and viral-worthy." author="Priya Sharma" role="Fashion Blogger" company="TrendSetter" avatar="PS" />
+          <TestimonialCard quote="We needed YouTube subscribers for our tech channel. Their optimization strategy helped us cross 10K subs fast." author="Rohan Das" role="YouTuber" company="Tech Reviews" avatar="RD" />
+          <TestimonialCard quote="As a new startup in Noida, their social media branding gave us the initial push we desperately needed." author="Amit Verma" role="Founder" company="Noida Startups" avatar="AV" />
         </div>
       </section>
 
@@ -498,11 +474,11 @@ export default function SocialMediaPage() {
 
       {/* CTA SECTION */}
       <section className="bb-svc-cta-section" style={{background: `linear-gradient(135deg, ${accentColor}, #1e3a8a)`}}>
-        <h2>Ready to Go Viral?</h2>
-        <p>Let's build a social media presence that converts followers into customers.</p>
+        <h2>Grow Faster with Social Media Marketing</h2>
+        <p>Whether you need Instagram Followers, Facebook Followers, or YouTube Subscribers, we have the right solution for you.</p>
         <Link to="/contact-us">
           <button className="bb-svc-btn-primary" style={{background: 'white', color: accentColor, border: 'none'}}>
-            Get Free Strategy Call
+            Start Growing Today
           </button>
         </Link>
       </section>

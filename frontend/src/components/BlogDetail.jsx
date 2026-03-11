@@ -18,7 +18,9 @@ import {
 } from "lucide-react";
 import { useParams, useNavigate } from "react-router-dom";
 
-const API_URL = 'https://bitsandbytes-sb2k.onrender.com';
+
+const API_URL = "http://localhost:5000";
+// const API_URL = 'https://bitsandbytes-sb2k.onrender.com';
 
 const BlogDetail = () => {
   const { slug } = useParams(); 
@@ -240,15 +242,7 @@ const BlogDetail = () => {
 
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Navigation */}
-        <div className="flex items-center justify-between mb-8 animate-fade-in">
-          <button
-            onClick={() => navigate("/")}
-            className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-all duration-300 group"
-          >
-            <Home size={20} className="group-hover:scale-110 transition-transform" /> 
-            <span className="font-medium">Home</span>
-          </button>
-          
+        <div className="flex items-center justify-between mb-8 animate-fade-in">      
           <div className="flex items-center gap-4">
             <button
               onClick={() => navigate("/blogs")}
@@ -426,7 +420,7 @@ const BlogDetail = () => {
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
               <article 
                 ref={contentRef}
-                className="prose prose-lg max-w-none bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-12 ml-4"
+                className="prose prose-lg max-w-none bg-gradient-to-br from-gray-900 to-blue-900 text-white backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-12 ml-4"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </div>

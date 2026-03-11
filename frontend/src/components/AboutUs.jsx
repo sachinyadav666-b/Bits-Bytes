@@ -108,7 +108,7 @@ const About = () => {
       <div className="bg-white text-slate-900 font-sans overflow-x-hidden">
 
         {/* ---------------- HERO SECTION ---------------- */}
-        <section className="relative pt-32 pb-24">
+        <section className="relative pt-5 pb-24">
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-b from-cyan-50 to-purple-50 rounded-bl-[200px] -z-10 opacity-70"></div>
 
           <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
@@ -172,7 +172,7 @@ const About = () => {
               </div>
 
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border max-w-[200px]">
-                <div className="text-4xl font-black text-cyan-600">500+</div>
+                <div className="text-4xl font-black text-cyan-600">50+</div>
                 <div className="text-xs font-bold text-slate-500 uppercase">Projects Delivered</div>
               </div>
             </div>

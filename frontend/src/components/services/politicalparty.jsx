@@ -12,55 +12,58 @@ import {
   CheckCircle2,
   ArrowRight,
   Radio,
-  Vote
+  Vote,
+  Share2,
+  PenTool
 } from "lucide-react";
 
 const PoliticalMarketing = () => {
+  // --- 1. CORE SERVICES DATA (Mapped from your content) ---
   const strategies = [
     {
-      icon: <Megaphone size={32} />,
-      title: "Social Media War Room",
-      desc: "We set up a 24/7 digital war room to control the narrative, counter opposition propaganda, and trend your hashtags instantly.",
+      icon: <Share2 size={32} />,
+      title: "Political Social Media Marketing",
+      desc: "We manage Facebook pages, Instagram reels, YouTube channels, and Twitter/X campaigns to inform, inspire, and influence voters daily.",
       color: "text-orange-600",
       bg: "bg-orange-50",
       border: "border-orange-100",
     },
     {
       icon: <Target size={32} />,
-      title: "Booth-Level Targeting",
-      desc: "Micro-target voters based on demographics and location. We deliver different messages to different age groups and areas.",
+      title: "Voter Targeting & Audience",
+      desc: "Winning campaigns depend on strategy. We segment audiences (Youth, Women, Local Constituency) to ensure your message reaches the right voters.",
       color: "text-blue-600",
       bg: "bg-blue-50",
       border: "border-blue-100",
     },
     {
-      icon: <MessageCircle size={32} />,
-      title: "WhatsApp & SMS Blast",
-      desc: "Direct-to-voter connection. Automated broadcast lists, chatbots for voter queries, and bulk SMS campaigns for rally updates.",
+      icon: <Megaphone size={32} />,
+      title: "Election Campaign Advertising",
+      desc: " targeted political ad campaigns on Facebook, Instagram & Google. We focus on location-based and issue-based awareness to maximize reach.",
       color: "text-green-600",
       bg: "bg-green-50",
       border: "border-green-100",
     },
     {
       icon: <ShieldAlert size={32} />,
-      title: "Reputation Management (ORM)",
-      desc: "Cleaning negative search results, handling crisis situations, and promoting positive news to build a clean leader image.",
+      title: "Online Reputation Management",
+      desc: "Public image is everything. We monitor online mentions, build a positive image, and handle crisis communication to maintain voter trust.",
       color: "text-purple-600",
       bg: "bg-purple-50",
       border: "border-purple-100",
     },
     {
-      icon: <Video size={32} />,
-      title: "Viral Reels & Video PR",
-      desc: "High-quality video production, emotional storytelling, and meme marketing to engage the youth and go viral.",
+      icon: <PenTool size={32} />,
+      title: "Content & Messaging Strategy",
+      desc: "Content decides perception. We design campaign posters, speech highlights, and creative reels that build an emotional connection with the public.",
       color: "text-rose-600",
       bg: "bg-rose-50",
       border: "border-rose-100",
     },
     {
       icon: <BarChart3 size={32} />,
-      title: "Voter Sentiment Analytics",
-      desc: "Data-driven insights. We analyze what the public is thinking before you speak, helping you draft the perfect manifesto.",
+      title: "Analytics & Performance",
+      desc: "Data-driven insights. We track reach, video views, audience growth, and engagement to constantly improve campaign effectiveness.",
       color: "text-cyan-600",
       bg: "bg-cyan-50",
       border: "border-cyan-100",
@@ -72,7 +75,7 @@ const PoliticalMarketing = () => {
 
       {/* ---------------- HERO SECTION ---------------- */}
       <section className="relative pt-32 pb-24 overflow-hidden bg-slate-900 text-white">
-        {/* Abstract Background for "Crowd" feel */}
+        {/* Abstract Background */}
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500 rounded-full blur-[150px] opacity-20"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-green-500 rounded-full blur-[150px] opacity-20"></div>
@@ -80,15 +83,16 @@ const PoliticalMarketing = () => {
         <div className="container mx-auto px-6 relative z-10 text-center">
           
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-orange-500/20 border border-orange-500/50 text-orange-400 text-xs font-bold tracking-widest uppercase animate-pulse">
-            <Radio size={14} /> Election Campaign Specialist
+            <Radio size={14} /> Political Marketing in Noida
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
-            Win The <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-white to-green-400">Digital Mandate</span>
+          <h1 className="text-4xl md:text-6xl font-black leading-tight mb-6">
+            Build Influence, Trust & <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-white to-green-400">Voter Connect</span>
           </h1>
 
-          <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-            Politics has changed. Rallies draw crowds, but <strong>Digital wins votes.</strong> We build the narrative that turns followers into voters and candidates into leaders.
+          <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-10">
+            In today’s digital era, elections are won online. We assist <strong>Political Parties, Leaders, and Aspirants</strong> in Noida to connect with voters, share their vision, and create a strong political identity.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -96,7 +100,7 @@ const PoliticalMarketing = () => {
               Start Your Campaign <Vote size={18} />
             </button>
             <button className="px-8 py-4 bg-transparent border border-slate-600 text-white rounded-full font-bold hover:bg-slate-800 transition-all">
-              View Case Studies
+              View Strategy
             </button>
           </div>
 
@@ -107,10 +111,10 @@ const PoliticalMarketing = () => {
       <div className="bg-slate-50 border-b border-gray-200 py-8">
         <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { label: "Voters Reached", val: "10M+" },
-            { label: "Campaigns Won", val: "25+" },
-            { label: "Constituencies", val: "50+" },
-            { label: "Social Reach", val: "500%" },
+            { label: "Voters Reached", val: "50 Lakh+" },
+            { label: "Parties Managed", val: "10+" },
+            { label: "Candidates", val: "25+" },
+            { label: "Engagement Rate", val: "High" },
           ].map((s, i) => (
             <div key={i}>
               <div className="text-3xl font-black text-slate-900">{s.val}</div>
@@ -124,10 +128,10 @@ const PoliticalMarketing = () => {
       <section className="container mx-auto px-6 py-24">
         <div className="text-center mb-16">
            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
-             Political <span className="text-orange-600">Dominance</span> Suite
+             Political Party <span className="text-orange-600">Digital Solutions</span>
            </h2>
            <p className="text-slate-600 max-w-2xl mx-auto">
-             A 360-degree digital strategy designed to penetrate every smartphone in your constituency.
+             Strategic, ethical, and result-oriented digital marketing services aimed at boosting voter engagement and public outreach.
            </p>
         </div>
 
@@ -158,103 +162,90 @@ const PoliticalMarketing = () => {
         </div>
       </section>
 
-      {/* ---------------- THE WAR ROOM CONCEPT ---------------- */}
+      {/* ---------------- WHO WE HELP (Split Section) ---------------- */}
       <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-orange-900/20 to-transparent"></div>
         
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
            
+           {/* Left Content: Parties */}
            <div className="space-y-8">
-              <div className="inline-block px-3 py-1 bg-red-600 text-white text-xs font-bold uppercase rounded">
-                 High Alert
-              </div>
-              <h2 className="text-4xl font-black leading-tight">
-                 We Build Your Digital <br/>
-                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">Defense & Offense</span>
-              </h2>
-              <p className="text-slate-400 text-lg">
-                 Elections aren't just won on the ground anymore; they are won on WhatsApp groups, Twitter threads, and YouTube comments. We monitor every mention of your name.
-              </p>
+             <div className="inline-block px-3 py-1 bg-orange-600 text-white text-xs font-bold uppercase rounded">
+               For Organizations
+             </div>
+             <h2 className="text-4xl font-black leading-tight">
+                For Political <span className="text-orange-500">Parties</span>
+             </h2>
+             <p className="text-slate-400 text-lg">
+                Digital platforms help you communicate your vision, ideology, and achievements directly to the public. We focus on long-term brand building.
+             </p>
 
-              <div className="space-y-4">
-                 {[
-                    "Real-time Sentiment Tracking",
-                    "Competitor Analysis & Counter-Strategy",
-                    "Fake News Detection & Removal",
-                    "Influencer Mobilization"
-                 ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                       <CheckCircle2 className="text-green-500" size={20} />
-                       <span className="font-semibold text-slate-200">{item}</span>
-                    </div>
-                 ))}
-              </div>
+             <div className="space-y-4">
+                {[
+                   "Reach lakhs of voters online",
+                   "Share party vision & manifesto",
+                   "Build trust and credibility",
+                   "Control public narrative",
+                   "Engage youth and first-time voters"
+                ].map((item, i) => (
+                   <div key={i} className="flex items-center gap-3">
+                      <CheckCircle2 className="text-green-500" size={20} />
+                      <span className="font-semibold text-slate-200">{item}</span>
+                   </div>
+                ))}
+             </div>
            </div>
 
-           <div className="relative">
-              {/* Visual Representation of a Dashboard */}
-              <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-2xl relative transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                 <div className="flex justify-between items-center mb-6 border-b border-slate-700 pb-4">
-                    <div className="flex items-center gap-2">
-                       <Globe size={18} className="text-blue-400" />
-                       <span className="font-mono text-sm font-bold">LIVE CONSTITUENCY DATA</span>
-                    </div>
-                    <div className="flex gap-1">
-                       <span className="w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
-                       <span className="text-xs font-bold text-red-500">LIVE</span>
-                    </div>
-                 </div>
-                 
-                 <div className="space-y-4">
-                    {/* Dummy Charts */}
-                    <div className="flex items-center gap-4">
-                       <div className="w-24 text-xs text-slate-400 font-bold">Positive Sentiment</div>
-                       <div className="flex-1 h-3 bg-slate-700 rounded-full overflow-hidden">
-                          <div className="h-full w-[75%] bg-green-500"></div>
-                       </div>
-                       <div className="text-xs font-bold text-green-400">75%</div>
-                    </div>
-                    <div className="flex items-center gap-4">
-                       <div className="w-24 text-xs text-slate-400 font-bold">Engagement</div>
-                       <div className="flex-1 h-3 bg-slate-700 rounded-full overflow-hidden">
-                          <div className="h-full w-[90%] bg-blue-500"></div>
-                       </div>
-                       <div className="text-xs font-bold text-blue-400">High</div>
-                    </div>
-                    <div className="flex items-center gap-4">
-                       <div className="w-24 text-xs text-slate-400 font-bold">Reach</div>
-                       <div className="flex-1 h-3 bg-slate-700 rounded-full overflow-hidden">
-                          <div className="h-full w-[60%] bg-orange-500"></div>
-                       </div>
-                       <div className="text-xs font-bold text-orange-400">1.2M</div>
-                    </div>
-                 </div>
+           {/* Right Content: Leaders (Visual Card Style) */}
+           <div className="bg-slate-800 border border-slate-700 rounded-2xl p-8 shadow-2xl relative">
+              <div className="inline-block px-3 py-1 bg-blue-600 text-white text-xs font-bold uppercase rounded mb-6">
+                 For Individuals
               </div>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                 For Political Leaders & Candidates
+              </h3>
+              <p className="text-slate-400 mb-6">
+                 Your personal brand matters. We help you build a strong, positive, and consistent online image to stay connected with the public 24×7.
+              </p>
+              
+              <ul className="space-y-4">
+                 {[
+                    "Personal branding on social media",
+                    "Profile & Page Optimization",
+                    "Content strategy for speeches & rallies",
+                    "Direct voter communication campaigns"
+                 ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-slate-300">
+                       <div className="mt-1 min-w-[6px] h-[6px] rounded-full bg-blue-400"></div>
+                       {item}
+                    </li>
+                 ))}
+              </ul>
            </div>
 
         </div>
       </section>
 
-      {/* ---------------- COMPREHENSIVE SERVICES ---------------- */}
+      {/* ---------------- COMPREHENSIVE SERVICES (Platforms & Content) ---------------- */}
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
-              Complete Political <span className="text-orange-600">Digital Ecosystem</span>
+              Complete <span className="text-orange-600">Digital Ecosystem</span>
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              From voter outreach to reputation management, we provide end-to-end digital campaign services for political parties and candidates.
+              We create content that informs, inspires, and influences.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Facebook & Instagram Ads", desc: "Geo-targeted political advertising to reach specific constituencies with customized messaging in regional languages.", icon: "📱" },
-              { title: "YouTube Campaign Videos", desc: "Professional video production for campaign ads, rally recordings, and issue-based content in Hindi and regional languages.", icon: "🎬" },
-              { title: "Google Ads Campaigns", desc: "Search and display advertising targeting voters searching for political information and election updates.", icon: "🔍" },
-              { title: "Influencer Partnerships", desc: "Collaborate with local influencers, community leaders, and celebrities to amplify your message.", icon: "⭐" },
-              { title: "Ground-Digital Integration", desc: "Connect online campaigns with ground activities - rally promotions, booth apps, and volunteer coordination.", icon: "🤝" },
-              { title: "EC Compliance", desc: "All campaigns fully compliant with Election Commission guidelines including disclaimers and spending reports.", icon: "✅" },
+              { title: "Facebook Political Pages", desc: "Building communities and engaging local voters through dedicated pages.", icon: "📘" },
+              { title: "Instagram Reels & Posts", desc: "Connecting with youth voters through short, viral video content.", icon: "📸" },
+              { title: "YouTube Channel Management", desc: "Hosting speeches, rallies, and interviews for long-term visibility.", icon: "🎬" },
+              { title: "Campaign Posters & Banners", desc: "High-quality visual creatives for festivals and public messages.", icon: "🖼️" },
+              { title: "Twitter/X Engagement", desc: "Driving conversations and managing trending topics.", icon: "🐦" },
+              { title: "WhatsApp Communication", desc: "Direct outreach to supporters and volunteers.", icon: "💬" },
             ].map((service, i) => (
               <div key={i} className="bg-white p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition-shadow">
                 <div className="text-3xl mb-4">{service.icon}</div>
@@ -266,50 +257,22 @@ const PoliticalMarketing = () => {
         </div>
       </section>
 
-      {/* ---------------- ELECTION TYPES ---------------- */}
-      <section className="py-24 bg-slate-900 text-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black mb-4">
-              Elections We <span className="text-orange-500">Support</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: "Lok Sabha Elections", desc: "National-level campaigns reaching millions of voters across parliamentary constituencies" },
-              { title: "Vidhan Sabha Elections", desc: "State assembly election campaigns with constituency-specific targeting and messaging" },
-              { title: "Municipal Corporation", desc: "City-level election campaigns for mayor, councillor, and corporation positions" },
-              { title: "Panchayat Elections", desc: "Rural grassroots campaigns for gram panchayat, block, and district level elections" },
-              { title: "Student Union Elections", desc: "University and college election campaigns targeting young voters" },
-              { title: "Party Building (Year-Round)", desc: "Continuous digital presence and engagement between elections" },
-            ].map((type, i) => (
-              <div key={i} className="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-orange-500 transition-colors">
-                <h3 className="font-bold text-lg text-white mb-2">{type.title}</h3>
-                <p className="text-slate-400 text-sm">{type.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ---------------- FAQ SECTION ---------------- */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
-              Frequently Asked <span className="text-orange-600">Questions</span>
+              Why Choose Us?
             </h2>
+            <p className="text-slate-600">Your questions about Political Digital Marketing answered.</p>
           </div>
 
           <div className="max-w-3xl mx-auto space-y-4">
             {[
-              { q: "What types of political campaigns do you handle?", a: "We work with national parties, regional parties, individual candidates, municipal elections, panchayat elections, student union elections, and year-round party building activities." },
-              { q: "How do you maintain confidentiality?", a: "Strict NDAs with all team members, separate teams for competing clients, secure communication channels, and encrypted data storage." },
-              { q: "What languages do you support?", a: "We create content in Hindi, English, Tamil, Telugu, Bengali, Marathi, Gujarati, Kannada, Malayalam, Punjabi, and other regional languages." },
-              { q: "How quickly can you set up a campaign?", a: "Basic digital presence within 48-72 hours. Full campaign infrastructure typically takes 1-2 weeks." },
-              { q: "Do you handle crisis management?", a: "Yes, we have dedicated ORM specialists who monitor mentions 24/7 and can respond to crises within minutes." },
-              { q: "What is the cost?", a: "Packages start from ₹2-5 lakhs for local elections to ₹50 lakhs+ for state-level campaigns." },
+              { q: "Who can use these services?", a: "Our services are ideal for Political Parties, Election Candidates, Aspiring Leaders, Student Unions, and Social Activists." },
+              { q: "How do you help with Reputation Management?", a: "We monitor online conversations, suppress negative content with positive storytelling, and manage crisis communications effectively." },
+              { q: "Do you provide content in regional languages?", a: "Yes, we create content in Hindi, English, and regional dialects to ensure deep connection with local voters." },
+              { q: "Is digital marketing useful for local elections?", a: "Absolutely. With hyper-local targeting, we can reach specific wards and panchayats more effectively than traditional media." },
             ].map((faq, i) => (
               <div key={i} className="bg-slate-50 p-6 rounded-xl border border-gray-200">
                 <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
@@ -321,15 +284,15 @@ const PoliticalMarketing = () => {
       </section>
 
       {/* ---------------- CTA ---------------- */}
-      <section className="py-24 px-6 text-center">
+      <section className="py-24 px-6 text-center bg-orange-50">
         <div className="container mx-auto">
-           <h2 className="text-4xl font-black text-slate-900 mb-6">Ready to Lead?</h2>
+           <h2 className="text-4xl font-black text-slate-900 mb-6">Strengthen Your Campaign with Digital Power</h2>
            <p className="text-gray-600 text-lg mb-10 max-w-2xl mx-auto">
-              Don't let the opposition control the narrative. Take charge of your digital presence today.
+             If you are looking to connect with your voter base, create your political image, and increase your popularity on social media, we are here to help.
            </p>
            <Link to="/contact">
              <button className="px-10 py-4 bg-slate-900 text-white rounded-full font-bold shadow-xl hover:bg-slate-800 transition-all flex items-center gap-3 mx-auto">
-                Schedule a Private Consultation <ArrowRight />
+               Schedule a Consultation <ArrowRight />
              </button>
            </Link>
         </div>

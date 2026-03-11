@@ -430,157 +430,147 @@ select:focus-visible {
 }
 
 /* ==================== BRAND SECTION ==================== */
+/* ==================== ENHANCED BRAND SECTION ==================== */
+/* ✅ बड़ा टेक्स्ट और बॉक्स डिजाइन */
+
+/* ==================== ENHANCED BRAND SECTION ==================== */
+
 .brand-section {
   background: #fff;
   position: relative;
   overflow: hidden;
-  padding: 4rem 0;
+  padding: 0 !important;
+  margin-top: -1px;
+  border-bottom: 1px solid #e2e8f0;
 }
 
+/* ✅ TEXT VISIBLE करने के लिए */
+.brand-section .text-center {
+  margin-bottom: 2rem !important;
+  padding-top: 2.5rem;
+  text-align: center !important;
+}
+
+/* ✅ Text दिखने के लिए IMPORTANT */
+.brand-section .text-center span {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 1.3rem !important; /* बड़ा size */
+  font-weight: 800 !important;
+  letter-spacing: 0.1em !important;
+  color: #334155 !important; /* SOLID COLOR - gradient नहीं */
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  background: #f8fafc !important; /* Light background */
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.15);
+  margin: 1rem auto;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Accent border top */
+.brand-section .text-center span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0ea5e9, #8b5cf6);
+  border-radius: 2px;
+}
+
+/* ✅ बाकी CSS वही रहेगा */
 .brand-ticker-wrapper {
   width: 100%;
   overflow: hidden;
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 15%,
-    black 85%,
-    transparent
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 15%,
-    black 85%,
-    transparent
-  );
-  padding: 2rem 0;
+  position: relative;
+  padding: 2.5rem 0;
+  background: #f8fafc;
+  border-radius: 16px;
+  margin: 0 1rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .brand-track {
   display: flex;
-  gap: 5rem; /* More gap for bigger logos */
-  animation: brand-scroll 35s linear infinite;
+  gap: 3rem;
+  animation: brand-scroll-enhanced 35s linear infinite;
   width: max-content;
   will-change: transform;
-  align-items: center;
+  padding: 1rem 2rem;
 }
 
-/* LOGO SIZE BADA KAR DIYA - 100px height */
-.brand-logo {
-  height: 100px; /* ✅ BOHOT BADA KAR DIYA */
-  width: auto;
-  max-width: 200px;
-  min-width: 150px;
-  object-fit: contain;
-  filter: grayscale(0%) !important; /* ✅ COLORED HI RAHEGA */
-  opacity: 0.8; /* ✅ THODA TRANSPARENT */
-  transition: all 0.4s var(--transition-smooth);
+.brand-track > div {
   flex-shrink: 0;
-}
-
-.brand-logo:hover {
-  opacity: 1; /* ✅ HOVER PAR FULL VISIBLE */
-  filter: grayscale(0%) !important; /* ✅ COLORED HI RAHEGA */
-  transform: scale(1.15);
-}
-
-@keyframes brand-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.333%); }
-}
-
-/* Title styling */
-.brand-section .text-center {
-  margin-bottom: 2rem;
-}
-
-.brand-section .text-xs {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  color: #64748b;
-  text-transform: uppercase;
-}
-
-/* Mobile adjustments - size bada rahega */
-@media (max-width: 768px) {
-  .brand-logo {
-    height: 70px; /* ✅ MOBILE PE BHI BADA */
-    max-width: 140px;
-    min-width: 100px;
-  }
-  
-  .brand-track {
-    gap: 3rem;
-  }
-  
-  .brand-ticker-wrapper {
-    mask-image: linear-gradient(
-      to right,
-      transparent,
-      black 5%,
-      black 95%,
-      transparent
-    );
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent,
-      black 5%,
-      black 95%,
-      transparent
-    );
-  }
-}
-
-/* Tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .brand-logo {
-    height: 85px;
-    max-width: 170px;
-  }
-}
-
-/* Pause animation on hover */
-.brand-track:hover {
-  animation-play-state: paused;
-}
-
-/* For reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .brand-track {
-    animation-duration: 50s;
-  }
-}
-
-/* Home.css */
-
-/* Service card image fix */
-.service-card-wrapper img {
-  width: 100% !important;
-  height: 200px !important;
-  object-fit: cover !important;
-  object-position: center center !important;
-}
-
-/* Brand slider */
-.brand-ticker-wrapper {
-  overflow: hidden;
-  position: relative;
-}
-
-.brand-track {
+  padding: 1.5rem 2.5rem;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.05),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
-  animation: brand-scroll 30s linear infinite;
-  will-change: transform;
-  padding: 10px 0;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  min-width: 200px;
+  position: relative;
+  overflow: hidden;
 }
 
-.brand-track:hover {
-  animation-play-state: paused;
+.brand-track > div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0ea5e9, #8b5cf6);
+  border-radius: 12px 12px 0 0;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
-@keyframes brand-scroll {
+.brand-track > div:hover {
+  transform: translateY(-5px);
+  border-color: #0ea5e9;
+  box-shadow: 
+    0 15px 30px rgba(14, 165, 233, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.brand-track > div:hover::before {
+  opacity: 1;
+}
+
+.brand-logo {
+  height: 70px !important;
+  width: auto !important;
+  max-width: 180px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  filter: grayscale(0%) !important;
+  opacity: 0.9 !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-track > div:hover .brand-logo {
+  opacity: 1 !important;
+  transform: scale(1.15);
+  filter: brightness(1.1) saturate(1.2) !important;
+}
+
+@keyframes brand-scroll-enhanced {
   0% {
     transform: translateX(0);
   }
@@ -589,19 +579,39 @@ select:focus-visible {
   }
 }
 
-.brand-logo {
-  width: 140px !important;
-  height: 60px !important;
-  object-fit: contain !important;
-  object-position: center center !important;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease;
+.brand-track:hover {
+  animation-play-state: paused;
 }
 
-.brand-logo:hover {
-  filter: grayscale(0%);
-  opacity: 1;
+/* ✅ Mobile Responsive */
+@media (max-width: 768px) {
+  .brand-section .text-center span {
+    font-size: 0.9rem !important;
+    padding: 0.5rem 1rem;
+    letter-spacing: 0.08em;
+  }
+  
+  .brand-ticker-wrapper {
+    margin: 0 0.5rem;
+    padding: 1.5rem 0;
+    border-radius: 12px;
+  }
+  
+  .brand-track {
+    gap: 1.5rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .brand-track > div {
+    padding: 1rem 1.5rem;
+    min-height: 80px;
+    min-width: 150px;
+  }
+  
+  .brand-logo {
+    height: 50px !important;
+    max-width: 140px !important;
+  }
 }
 
 /* Testimonial slider */

@@ -138,7 +138,7 @@ export default function CrossPlatformPage() {
       <main className='bg-white text-slate-900 overflow-hidden font-sans'>
         
         {/* ================= HERO SECTION ================= */}
-        <section className='relative py-20 lg:py-32 overflow-hidden'>
+        <section className='relative py-20 lg:py-12 overflow-hidden'>
           {/* Background Blob - Adjusted to Cyan/Blue */}
           <div className='absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-cyan-100 via-blue-50 to-transparent rounded-full -translate-y-1/2 translate-x-1/4 opacity-60' />
           

@@ -138,7 +138,7 @@ export default function OfflineFirstPage() {
       <main className='bg-white text-slate-900 overflow-hidden font-sans'>
         
         {/* ================= HERO SECTION ================= */}
-        <section className='relative py-20 lg:py-32 overflow-hidden'>
+        <section className='relative py-20 lg:py-12 overflow-hidden'>
           {/* Background Blob - Violet/Purple */}
           <div className='absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-violet-100 via-purple-50 to-transparent rounded-full -translate-y-1/2 translate-x-1/4 opacity-60' />
           

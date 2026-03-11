@@ -11,74 +11,62 @@ import {
 export default function GoogleAdsPage() {
   const accentColor = '#4285F4'; // Google Blue
 
-  // --- 1. FEATURES DATA (Updated with Images) ---
+  // --- 1. FEATURES DATA (Updated with Your Content) ---
   const features = [
     {
       image: "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=600&q=80",
-      title: "Search Ads",
-      description: "Capture high-intent buyers actively searching for your products or services on Google. Text ads appear at the top of search results when users search for your target keywords, driving qualified traffic to your website."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80",
-      title: "Display Network",
-      description: "Reach millions across 2M+ websites with eye-catching banner and responsive display ads. Perfect for brand awareness, remarketing, and reaching users while they browse their favorite sites."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80",
-      title: "YouTube Ads",
-      description: "Engage 2.5B+ monthly users with skippable, non-skippable, and bumper video ads. Powerful for storytelling, brand building, and reaching audiences during their entertainment time."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=600&q=80",
-      title: "Shopping Ads",
-      description: "Showcase your products with images, prices, and reviews right in Google search results. Essential for e-commerce businesses to drive product sales and compete in the digital marketplace."
+      title: "Google Search Ads",
+      description: "Capture ready-to-buy customers. We run keyword-focused campaigns to target high-converting terms, ensuring you appear at the top of Google results when intent is highest."
     },
     {
       image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
-      title: "Local Service Ads",
-      description: "Get verified leads for local businesses with Google Guaranteed badges and pay-per-lead pricing. Perfect for service providers like plumbers, electricians, lawyers, and healthcare professionals."
+      title: "Local Business Targeting",
+      description: "Focus on Noida & Delhi NCR. We use city & pin-code targeting, call-only ads, and Google Maps integration to attract nearby customers for clinics, shops, and service providers."
+    },
+    {
+      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80",
+      title: "Google Display Ads",
+      description: "Build brand awareness across the web. Ideal for remarketing, banner ads on websites/apps, and visual promotions to keep your brand in front of your audience."
+    },
+    {
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=600&q=80",
+      title: "E-Commerce & Shopping Ads",
+      description: "Generate direct product sales. We utilize Shopping Ads, product listings, and dynamic remarketing to convert search traffic into revenue for online sellers."
     },
     {
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
-      title: "Performance Max",
-      description: "AI-powered campaigns that optimize across all Google properties for maximum conversions. Machine learning finds your best customers across Search, Display, YouTube, Gmail, and Maps."
+      title: "Smart Audience Targeting",
+      description: "We don't waste budget. We use keyword intent targeting, custom audiences, and remarketing to website visitors to ensure ads reach users most likely to convert."
+    },
+    {
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+      title: "Conversion Tracking & Analytics",
+      description: "Performance matters. We track calls, form submissions, sales, and ROAS (Return on Ad Spend) to provide transparent reports with actionable insights."
     }
   ];
 
-  // --- ADDITIONAL SERVICES FOR SEO ---
-  const additionalServices = [
-    { title: "Conversion Tracking Setup", description: "Proper tracking of calls, forms, purchases, and custom events using Google Tag Manager and GA4.", icon: "📊" },
-    { title: "Competitor Analysis", description: "Deep analysis of competitor ad strategies, keywords, and landing pages to identify opportunities.", icon: "🔍" },
-    { title: "A/B Testing", description: "Continuous testing of ad copy, landing pages, and audiences to improve performance.", icon: "⚡" },
-    { title: "Negative Keyword Management", description: "Strategic blocking of irrelevant searches to prevent wasted spend.", icon: "🚫" },
-    { title: "Remarketing Campaigns", description: "Re-engage website visitors with targeted display and search ads.", icon: "🔄" },
-    { title: "Landing Page Optimization", description: "Create high-converting landing pages for your Google Ads campaigns.", icon: "📄" }
-  ];
-
-  // --- 2. PROCESS DATA ---
+  // --- 2. PROCESS DATA (Aligned with Your Optimization Process) ---
   const process = [
-    { title: "Account Audit & Research", description: "Deep dive into your industry, competitors, and keyword opportunities. We analyze search volumes, competition levels, and CPC data to build a solid foundation." },
-    { title: "Campaign Architecture", description: "Strategic account structure with proper campaign segmentation, ad groups, and keyword matching types for maximum Quality Score and relevance." },
-    { title: "Ad Copy & Landing Pages", description: "Compelling ad copy with strong CTAs and conversion-optimized landing pages. We write multiple variations for A/B testing." },
-    { title: "Bid Strategy & Launch", description: "Smart bidding strategies, comprehensive conversion tracking setup, and controlled campaign launch with close monitoring." },
-    { title: "Continuous Optimization", description: "Ongoing bid adjustments, negative keyword additions, audience refinements, and ad copy testing to improve performance month over month." }
+    { title: "Campaign Strategy", description: "We analyze your business goals to choose the right mix of Search, Display, or Shopping ads targeting Noida or Global markets." },
+    { title: "Keyword Optimization", description: "Continuous research to find high-intent keywords and rigorous Negative Keyword filtering to stop wasted spend." },
+    { title: "Ad Copy & A/B Testing", description: "Writing compelling ad copies and testing different variations to improve Click-Through Rates (CTR) and Quality Scores." },
+    { title: "Smart Bidding", description: "Using advanced bid strategies and budget optimization to ensure you get the maximum leads for your spend." },
+    { title: "Audience Remarketing", description: "Re-engaging visitors who didn't convert the first time using strategic display and search remarketing lists." },
+    { title: "Performance Tracking", description: "Tracking every action—Calls, Leads, Sales—and providing detailed reports on your Return on Ad Spend (ROAS)." }
   ];
 
   const faqs = [
-    { question: "How much should I spend on Google Ads?", answer: "Start with ₹50,000-1,00,000/month for meaningful data. Competitive industries may need ₹2-5L+ for significant market share. We'll recommend an optimal budget based on your goals and industry competition." },
-    { question: "How do you charge for management?", answer: "We charge 12-18% of ad spend (minimum ₹20,000/month) based on account complexity and services included. This covers strategy, optimization, reporting, and dedicated account management." },
-    { question: "How long before I see results?", answer: "Search campaigns can generate leads within days. Optimization for best performance typically takes 4-8 weeks as we gather data and refine targeting. Significant ROI improvements usually occur within 2-3 months." },
-    { question: "Do you guarantee results?", answer: "We don't guarantee specific results as they depend on many factors like industry, competition, and landing page quality. However, we do guarantee best-in-class strategy, transparent reporting, and continuous optimization." },
-    { question: "Can you help with landing pages?", answer: "Yes! We provide landing page audits and can build high-converting pages optimized for your campaigns. Good landing pages are crucial for Quality Score and conversion rates." },
-    { question: "What is Quality Score and why does it matter?", answer: "Quality Score is Google's rating (1-10) of your ad relevance. Higher scores mean lower costs per click and better ad positions. We optimize through relevant keywords, compelling ad copy, and fast-loading landing pages." },
-    { question: "What's the difference between Search and Display ads?", answer: "Search ads appear when people actively search for your keywords (high intent). Display ads appear on websites and apps (awareness/retargeting). Most businesses benefit from both, depending on goals." },
-    { question: "How do you track conversions?", answer: "We set up comprehensive tracking using Google Tag Manager, Google Analytics 4, and Google Ads conversion tracking. This includes form submissions, phone calls, purchases, and custom events." },
-    { question: "Can you target specific locations?", answer: "Yes! Google Ads offers precise geo-targeting from country-level down to radius targeting around specific addresses. Perfect for local businesses or companies with specific service areas." },
-    { question: "What reporting do you provide?", answer: "We provide weekly performance updates and comprehensive monthly reports covering impressions, clicks, conversions, cost per conversion, ROAS, and actionable insights with a real-time dashboard." }
+    { question: "Who should use Google Ads?", answer: "Any business seeking immediate visibility and leads. It's perfect for Service-based businesses, Local shops in Noida, E-Commerce stores, and B2B companies." },
+    { question: "How does it help local businesses in Noida?", answer: "We use location-based targeting (Pin-codes/City), Call-only ads, and Google Maps integration to ensure you appear when locals search for your services." },
+    { question: "What is Google Search Ads?", answer: "Search Ads allow you to appear at the top of Google results when users search for specific keywords. It captures users with strong buying intent." },
+    { question: "Do you track phone calls and leads?", answer: "Yes. We track Calls, WhatsApp clicks, Form submissions, and Sales to measure the exact ROI of your campaigns." },
+    { question: "What is the difference between Search and Display ads?", answer: "Search Ads capture active intent (people searching for you). Display Ads build awareness (showing banners while people browse other sites)." },
+    { question: "How do you control the budget?", answer: "We use bid management, daily budget caps, and negative keyword lists to ensure your money is spent only on high-quality clicks." },
+    { question: "Can E-Commerce businesses benefit?", answer: "Absolutely. We use Google Shopping Ads and Dynamic Remarketing to show your exact products to interested buyers, driving direct online sales." }
   ];
 
   const techStack = [
-    "Google Search", "Google Display", "YouTube Ads", "Google Shopping", "Performance Max", "Discovery Ads", "Google Analytics 4", "Tag Manager", "Looker Studio", "Keyword Planner"
+    "Google Search", "Google Display", "YouTube Ads", "Google Shopping", "Google Maps", "Gmail Ads", "Google Analytics 4", "Tag Manager", "Looker Studio", "Keyword Planner"
   ];
 
   return (
@@ -152,7 +140,7 @@ export default function GoogleAdsPage() {
           50% { transform: translateY(-10px); }
         }
 
-        /* --- ✅ CUSTOM CARD STYLES (Features) --- */
+        /* --- CUSTOM CARD STYLES (Features) --- */
         .bb-svc-features-grid {
           display: grid;
           grid-template-columns: 1fr;
@@ -212,7 +200,7 @@ export default function GoogleAdsPage() {
             margin-bottom: 1rem;
         }
 
-        /* --- ✅ UNIQUE PROCESS SECTION STYLES --- */
+        /* --- UNIQUE PROCESS SECTION STYLES --- */
         .bb-process-unique-section {
           padding: 80px 20px;
           background: #f8fafc;
@@ -314,15 +302,15 @@ export default function GoogleAdsPage() {
         <div className="bb-svc-hero-content">
           <div className="bb-svc-hero-text">
             <div style={{ display: 'inline-block', padding: '6px 16px', background: 'rgba(255, 255, 255, 0.15)', color: 'white', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 'bold', marginBottom: '15px', letterSpacing: '0.05em' }}>
-              🔍 GOOGLE ADVERTISING
+              🔍 GOOGLE ADS SERVICES IN NOIDA
             </div>
-            <h1>Dominate Google <br/><span style={{color: '#ffffff'}}>Search & Beyond</span></h1>
-            <p>Capture customers at the exact moment they're searching for your products or services.</p>
+            <h1>Reach High-Intent <br/><span style={{color: '#ffffff'}}>Customers Instantly</span></h1>
+            <p>Our Google Ads Services in Noida are built for businesses that want to appear exactly when customers are searching for their products or services.</p>
 
             <div className="bb-svc-hero-buttons">
               <Link to="/contact-us">
                 <button className="bb-svc-btn-primary" style={{background: 'white', color: accentColor, border: 'none'}}>
-                  Start Google Ads
+                  Get Instant Leads
                 </button>
               </Link>
               <Link to="/projects">
@@ -350,20 +338,20 @@ export default function GoogleAdsPage() {
       <section className="bb-svc-stats-section">
         <div className="bb-svc-stats-grid">
           <div className="bb-svc-stat-card">
-            <div className="bb-svc-stat-number" style={{color: accentColor}}>₹<AnimatedCounter end={8} suffix="Cr+" /></div>
-            <div className="bb-svc-stat-label">Ad Spend Managed</div>
+            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={100} suffix="%" /></div>
+            <div className="bb-svc-stat-label">Instant Visibility</div>
           </div>
           <div className="bb-svc-stat-card">
             <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={500} suffix="%" /></div>
-            <div className="bb-svc-stat-label">Avg. ROAS</div>
+            <div className="bb-svc-stat-label">Higher ROI</div>
           </div>
           <div className="bb-svc-stat-card">
             <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={50} suffix="K+" /></div>
-            <div className="bb-svc-stat-label">Leads Generated</div>
+            <div className="bb-svc-stat-label">Qualified Leads</div>
           </div>
           <div className="bb-svc-stat-card">
-            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={75} suffix="+" /></div>
-            <div className="bb-svc-stat-label">Businesses Scaled</div>
+            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={24} suffix="/7" /></div>
+            <div className="bb-svc-stat-label">Performance Tracking</div>
           </div>
         </div>
       </section>
@@ -371,7 +359,7 @@ export default function GoogleAdsPage() {
       {/* TECH TICKER */}
       <div className="bb-svc-tech-ticker">
         <div style={{textAlign:'center', marginBottom:'1.5rem', textTransform:'uppercase', fontSize:'0.75rem', letterSpacing:'3px', fontWeight:'bold', color: accentColor}}>
-          GOOGLE ADS PLATFORMS
+          GOOGLE ADS ECOSYSTEM
         </div>
         <div className="bb-svc-tech-track">
            {[...techStack, ...techStack].map((tech, i) => (
@@ -380,11 +368,11 @@ export default function GoogleAdsPage() {
         </div>
       </div>
 
-      {/* ✅ FEATURES SECTION (UPDATED WITH IMAGES) */}
+      {/* FEATURES SECTION */}
       <section className="bb-svc-features-section">
         <div className="bb-svc-section-header">
-          <h2>Full-Funnel Google Advertising</h2>
-          <p>From awareness to conversion, we cover every touchpoint.</p>
+          <h2>Google Ads Solutions</h2>
+          <p>We build audience-focused, keyword-driven campaigns that deliver measurable ROI.</p>
         </div>
         <div className="bb-svc-features-grid">
           {features.map((f, i) => (
@@ -401,7 +389,7 @@ export default function GoogleAdsPage() {
         </div>
       </section>
 
-      {/* ✅ UNIQUE PROCESS SECTION (SPLIT LAYOUT) */}
+      {/* UNIQUE PROCESS SECTION */}
       <section className="bb-process-unique-section">
         <div className="bb-process-split-container">
             
@@ -409,15 +397,15 @@ export default function GoogleAdsPage() {
             <div className="bb-process-left-img">
                 <img 
                     src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1080&q=80"
-                    alt="Google Ads Strategy Process"
+                    alt="Google Ads Optimization Process"
                     className="bb-unique-audit-img"
                 />
             </div>
 
             {/* RIGHT SIDE: TIMELINE CONTENT */}
             <div className="bb-process-right-content">
-                <h2>Our Google Ads Process</h2>
-                <p className="lead">A systematic approach to profitable advertising. From keyword research to continuous optimization.</p>
+                <h2>Our Optimization Process</h2>
+                <p className="lead">Running ads is not enough—optimization is key. We keep your Google Ads campaigns profitable with a rigorous process.</p>
 
                 <div className="bb-audit-timeline">
                     {process.map((step, index) => (
@@ -443,9 +431,9 @@ export default function GoogleAdsPage() {
           <h2>Client Success Stories</h2>
         </div>
         <div className="bb-svc-testimonials-grid">
-          <TestimonialCard quote="Our cost per lead dropped by 60% while lead quality improved dramatically. Incredible results!" author="Vikram Joshi" role="Director, PropRealty" avatar="VJ" />
-          <TestimonialCard quote="They helped us achieve #1 rankings for our most competitive keywords. ROI has been phenomenal." author="Anita Sharma" role="CEO, EduLearn" avatar="AS" />
-          <TestimonialCard quote="The Shopping campaign setup transformed our e-commerce business. Sales doubled in 3 months." author="Raj Malhotra" role="Founder, GadgetStore" avatar="RM" />
+          <TestimonialCard quote="Bits and Bytes IT Solution transformed our local clinic's visibility. We get daily calls from patients in Noida." author="Dr. Amit Verma" role="Dentist" company="Smile Care" avatar="AV" />
+          <TestimonialCard quote="Their Shopping Ads strategy helped us scale our online store. Our ROAS has never been higher." author="Pooja Singh" role="Founder" company="Fashion Kart" avatar="PS" />
+          <TestimonialCard quote="Call-only ads worked wonders for our plumbing business. We are fully booked thanks to their targeting." author="Rakesh Kumar" role="Owner" company="Quick Fix" avatar="RK" />
         </div>
       </section>
 
@@ -463,11 +451,11 @@ export default function GoogleAdsPage() {
 
       {/* CTA SECTION */}
       <section className="bb-svc-cta-section" style={{background: `linear-gradient(135deg, ${accentColor}, #1a73e8)`}}>
-        <h2>Ready to Grow with Google Ads?</h2>
-        <p>Get a free account audit and discover untapped opportunities.</p>
+        <h2>Start Google Ads for Your Business in Noida</h2>
+        <p>If you want immediate visibility, qualified leads, and scalable growth, we are the right choice.</p>
         <Link to="/contact-us">
           <button className="bb-svc-btn-primary" style={{background: 'white', color: accentColor, border: 'none'}}>
-            Get Free Account Audit
+            Get Started Now
           </button>
         </Link>
       </section>

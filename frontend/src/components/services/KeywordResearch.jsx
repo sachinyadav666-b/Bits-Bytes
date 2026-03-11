@@ -7,107 +7,162 @@ import {
   AnimatedCounter,
   sharedStyles
 } from '../SharedComponents'
+import { 
+  CheckCircle, Search, TrendingUp, Target, BarChart3, Users, Globe, Zap, 
+  ArrowRight, Shield, Award, PieChart, MessageSquare, Briefcase, MapPin, MousePointer
+} from 'lucide-react'
 
 export default function KeywordResearchPage({ onNavigate }) {
-  // Brand Color + Traffic Orange (High Energy)
-  const accentColor = '#0EA5E9'
-  const trafficColor = '#F97316'
+  // --- COLOR PALETTE (Light & Fresh) ---
+  const primaryBlue = '#2563EB' // Royal Blue
+  const secondaryPurple = '#7C3AED' // Deep Purple
+  const trafficOrange = '#F97316' // Action Orange
+  const bgLight = '#F8FAFC' // Very Light Slate
+  const textDark = '#1E293B' // Slate 800
 
   // --- 1. FEATURES DATA ---
   const features = [
     {
-      icon: (
-        <svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' strokeWidth='2'>
-          <circle cx='11' cy='11' r='8' />
-          <line x1='21' y1='21' x2='16.65' y2='16.65' />
-        </svg>
-      ),
+      icon: <Search size={24} />,
       title: 'Long-Tail Discovery',
-      description: 'We find specific, low-competition phrases (3+ words) that are easier to rank for and convert better. These keywords have higher purchase intent and lower competition.',
+      description: 'We find specific, low-competition phrases (3+ words) that are easier to rank for and convert better. These keywords have higher purchase intent.',
+      color: 'text-blue-600',
+      bg: 'bg-blue-50'
     },
     {
-      icon: (
-        <svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' strokeWidth='2'>
-          <path d='M12 20V10' />
-          <path d='M18 20V4' />
-          <path d='M6 20v-4' />
-        </svg>
-      ),
+      icon: <TrendingUp size={24} />,
       title: 'Competitor Gap Analysis',
       description: 'We analyze your competitors to see exactly which keywords drive their traffic, identify gaps in your strategy, and find opportunities to outrank them.',
+      color: 'text-purple-600',
+      bg: 'bg-purple-50'
     },
     {
-      icon: (
-        <svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' strokeWidth='2'>
-          <circle cx='12' cy='12' r='10' />
-          <path d='M16.2 7.8l-2 .4 2 .4' />
-          <path d='M7.8 16.2l2-.4-2-.4' />
-        </svg>
-      ),
+      icon: <Target size={24} />,
       title: 'Search Intent Mapping',
       description: "We classify keywords into 'Informational', 'Navigational', 'Commercial', and 'Transactional' to target buyers at every stage of the funnel.",
+      color: 'text-emerald-600',
+      bg: 'bg-emerald-50'
     },
     {
-      icon: (
-        <svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' strokeWidth='2'>
-          <path d='M21.21 15.89A10 10 0 1 1 8 2.83' />
-          <path d='M22 12A10 10 0 0 0 12 2v10z' />
-        </svg>
-      ),
+      icon: <BarChart3 size={24} />,
       title: 'Difficulty vs Volume',
       description: "We calculate the 'Golden Ratio'—high search volume with low ranking difficulty (KD%) for quick wins that drive traffic fast.",
+      color: 'text-orange-600',
+      bg: 'bg-orange-50'
     },
     {
-      icon: (
-        <svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' strokeWidth='2'>
-          <path d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2' />
-          <circle cx='9' cy='7' r='4' />
-          <path d='M23 21v-2a4 4 0 0 0-3-3.87' />
-          <path d='M16 3.13a4 4 0 0 1 0 7.75' />
-        </svg>
-      ),
+      icon: <Users size={24} />,
       title: 'Audience Questions',
       description: 'We find exactly what questions your customers are asking (People Also Ask, Quora, Reddit) to create helpful content that answers their needs.',
+      color: 'text-indigo-600',
+      bg: 'bg-indigo-50'
     },
     {
-      icon: (
-        <svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' strokeWidth='2'>
-          <polyline points='22 12 18 12 15 21 9 3 6 12 2 12' />
-        </svg>
-      ),
+      icon: <Globe size={24} />,
       title: 'Trend Spotting',
       description: 'Identify rising topics before they peak using Google Trends and social listening to establish early authority and capture emerging traffic.',
+      color: 'text-pink-600',
+      bg: 'bg-pink-50'
     }
   ]
 
-  // --- 2. PROCESS DATA (Updated for New Layout) ---
+  // --- 2. PROCESS DATA ---
   const processPoints = [
     {
-      title: 'Niche Audit',
-      description: 'Analyzing your current rankings, traffic sources, and identifying industry benchmarks and opportunities.'
+      title: 'Business & Industry Analysis',
+      description: 'We begin with understanding your business model, industry, competition, and target audience.',
+      icon: <Briefcase size={20} />
     },
     {
-      title: 'Data Mining',
-      description: 'Scraping millions of keywords using enterprise tools like Ahrefs, SEMrush, and Google Keyword Planner.'
+      title: 'Keyword Discovery',
+      description: 'We uncover several hundred likely keywords using sophisticated SEO tools and market insights.',
+      icon: <Search size={20} />
     },
     {
-      title: 'Filtering & Clustering',
-      description: "Removing irrelevant terms and grouping similar keywords into 'Topic Clusters' for content strategy."
+      title: 'Search Intent Analysis',
+      description: 'We organize keywords into Informational, Commercial, Transactional and Navigational intent categories.',
+      icon: <Target size={20} />
     },
     {
-      title: 'Strategy Mapping',
-      description: 'Assigning keywords to specific pages (Homepage vs Blog vs Service Pages vs Product Pages).'
+      title: 'Competition & Difficulty Analysis',
+      description: 'We identify competition level and ranking potential for each target keyword.',
+      icon: <Shield size={20} />
     },
     {
-      title: 'Content Briefs',
-      description: 'Providing detailed roadmaps for writers including target keywords, LSI terms, and content structure.'
+      title: 'Final Keyword Mapping',
+      description: 'Keywords are assigned to specific pages for optimal on-page optimization.',
+      icon: <MapPin size={20} />
     },
     {
-      title: 'Ongoing Tracking',
-      description: 'Monthly rank tracking and keyword performance monitoring with recommendations for optimization.'
+      title: 'Strategy Implementation',
+      description: 'We provide content briefs and ongoing tracking with monthly optimization recommendations.',
+      icon: <Zap size={20} />
     }
   ]
 
+  // --- 3. TYPES OF KEYWORDS DATA ---
+  const keywordTypes = [
+    {
+      title: 'Short-Tail Keywords',
+      description: 'High search volume keywords (1-2 words) ideal for brand awareness and top-of-funnel traffic.',
+      stats: 'High Volume, High Competition',
+      accent: '#EF4444', // Red
+      gradient: 'linear-gradient(135deg, #FEF2F2, #FEE2E2)'
+    },
+    {
+      title: 'Long-Tail Keywords',
+      description: 'Specific phrases (3+ words) with lower competition but higher conversion rates for lead generation.',
+      stats: 'Lower Volume, Higher Conversion',
+      accent: '#10B981', // Emerald
+      gradient: 'linear-gradient(135deg, #ECFDF5, #D1FAE5)'
+    },
+    {
+      title: 'Local SEO Keywords',
+      description: 'Geographically targeted keywords perfect for businesses targeting Noida, Delhi NCR and surrounding areas.',
+      stats: 'Local Intent, High Relevance',
+      accent: '#3B82F6', // Blue
+      gradient: 'linear-gradient(135deg, #EFF6FF, #DBEAFE)'
+    },
+    {
+      title: 'Service & Product Keywords',
+      description: 'Commercial keywords that directly generate inquiries and sales for your specific offerings.',
+      stats: 'High Commercial Intent',
+      accent: '#8B5CF6', // Purple
+      gradient: 'linear-gradient(135deg, #F5F3FF, #EDE9FE)'
+    }
+  ]
+
+  // --- 4. MARKETING GOALS DATA ---
+  const marketingGoals = [
+    {
+      title: 'SEO Keyword Research',
+      description: 'For long-term organic traffic and higher Google rankings with sustainable growth strategies.',
+      icon: <TrendingUp className="text-blue-500" />
+    },
+    {
+      title: 'Content Marketing',
+      description: 'To plan blogs, articles, landing pages and FAQs that rank well and engage target audiences.',
+      icon: <MessageSquare className="text-pink-500" />
+    },
+    {
+      title: 'E-Commerce Optimization',
+      description: 'To optimize product pages, category pages and filters for higher sales and conversions.',
+      icon: <PieChart className="text-orange-500" />
+    },
+    {
+      title: 'PPC & Google Ads',
+      description: 'To reduce ad spend and increase ROI with high-converting paid keywords and ad campaigns.',
+      icon: <MousePointer className="text-green-500" />
+    }
+  ]
+
+  // --- 5. TOOLS DATA ---
+  const seoTools = [
+    'Ahrefs', 'SEMrush', 'Moz Pro', 'Google Keyword Planner', 'Google Search Console',
+    'SpyFu', 'Majestic', 'Ubersuggest', 'AnswerThePublic', 'Google Trends', 'KeywordTool.io'
+  ]
+
+  // --- 6. FAQs ---
   const faqs = [
     {
       question: "Why can't I just guess keywords?",
@@ -129,402 +184,560 @@ export default function KeywordResearchPage({ onNavigate }) {
       question: 'How long does the keyword research take?',
       answer: 'A comprehensive keyword research audit typically takes 5-7 business days for in-depth analysis including competitor research, keyword mapping, and content recommendations.'
     },
-    {
-      question: 'What deliverables do I receive?',
-      answer: 'You receive a comprehensive keyword research report including: prioritized keyword list with metrics, competitor analysis, topic clusters, content calendar recommendations, and technical SEO quick wins.'
-    },
-    {
-      question: 'How many keywords do you research?',
-      answer: 'We typically analyze 1,000-10,000+ keywords depending on your industry, then filter down to the most valuable 50-200 target keywords organized by priority and page assignment.'
-    },
-    {
-      question: 'Do you help implement the keywords?',
-      answer: 'Yes! We provide detailed content briefs and can work with your content team. We also offer full SEO implementation services including on-page optimization and content creation.'
-    },
-    {
-      question: 'How often should keyword research be updated?',
-      answer: 'We recommend quarterly keyword research updates to capture seasonal trends, new opportunities, and adjust strategy based on ranking performance.'
-    },
-    {
-      question: 'What is the cost of keyword research services?',
-      answer: 'Our keyword research packages start from ₹15,000 for basic research to ₹50,000+ for comprehensive enterprise-level research with ongoing tracking and strategy.'
-    }
-  ]
-
-  // --- 4. MOVING TOOLS TICKER ---
-  const seoTools = [
-    'Ahrefs', 'SEMrush', 'Moz Pro', 'Google Search Console', 'Ubersuggest',
-    'SpyFu', 'Majestic', 'Screaming Frog', 'KeywordTool.io', 'AnswerThePublic', 'Google Trends'
+    
   ]
 
   return (
-    <div className='service-page'>
+    <div className='service-page font-sans bg-white'>
       <style>{sharedStyles}</style>
 
-      {/* --- CUSTOM STYLES (Dark Theme + Data Scanner Visual) --- */}
+      {/* --- CUSTOM LIGHT THEME STYLES --- */}
       <style>{`
-        .bb-svc-hero-section {
-          background: #0f172a;
-          color: white;
+        /* GENERAL UTILS */
+        .section-padding { padding: 80px 20px; }
+        .max-w-container { max-width: 1200px; margin: 0 auto; }
+        .text-gradient {
+          background: linear-gradient(90deg, ${primaryBlue}, ${secondaryPurple});
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        
+        /* HERO SECTION */
+        .hero-light {
+          background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
           position: relative;
           overflow: hidden;
-          padding: 4rem 2rem;
+          padding-top: 140px;
+          padding-bottom: 80px;
         }
-        .bb-svc-hero-section::before {
-          content: '';
+        .hero-shape {
           position: absolute;
-          width: 100%;
-          height: 100%;
-          background-image: linear-gradient(#1e293b 1px, transparent 1px),
-          linear-gradient(90deg, #1e293b 1px, transparent 1px);
-          background-size: 40px 40px;
-          opacity: 0.3;
-          top: 0; left: 0;
+          background: white;
+          border-radius: 50%;
+          opacity: 0.4;
+          filter: blur(80px);
         }
 
-        .bb-svc-hero-content {
-           display: grid;
-           grid-template-columns: 1fr 1fr;
-           gap: 4rem;
-           max-width: 1200px;
-           margin: 0 auto;
-           position: relative;
-           z-index: 2;
-           align-items: center;
-        }
-        
-        @media (max-width: 968px) {
-           .bb-svc-hero-content { grid-template-columns: 1fr; }
-        }
-
-        /* HERO VISUAL: KEYWORD SCANNER */
-        .scanner-container {
-          position: relative;
-          width: 100%;
-          max-width: 480px;
-          margin: 0 auto;
-          background: #1e293b;
-          border-radius: 12px;
-          border: 1px solid #334155;
-          box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        /* SCANNER VISUAL (LIGHT MODE) */
+        .scanner-card {
+          background: white;
+          border-radius: 16px;
+          box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.1);
+          border: 1px solid #e2e8f0;
           overflow: hidden;
-          padding: 20px;
+          position: relative;
         }
-        
-        .search-bar-mock {
-          height: 40px;
-          background: #0f172a;
-          border: 1px solid #475569;
-          border-radius: 8px;
+        .scanner-header {
+          background: #f8fafc;
+          padding: 12px 20px;
+          border-bottom: 1px solid #e2e8f0;
           display: flex;
           align-items: center;
-          padding: 0 15px;
-          margin-bottom: 20px;
-          color: white;
-          font-family: monospace;
-          gap: 10px;
+          gap: 12px;
         }
-        
-        .result-row {
+        .scanner-body { padding: 0; }
+        .keyword-row {
           display: flex;
           justify-content: space-between;
+          padding: 16px 20px;
+          border-bottom: 1px solid #f1f5f9;
           align-items: center;
-          padding: 12px;
-          border-bottom: 1px solid #334155;
-          font-size: 13px;
+          animation: slideIn 0.5s forwards;
           opacity: 0;
-          animation: fadeInRow 0.5s forwards;
         }
-        .result-row:last-child { border-bottom: none; }
+        .keyword-row:last-child { border-bottom: none; }
         
-        .kw-tag { color: #cbd5e1; font-weight: 500; }
-        .metric-box { 
-          padding: 4px 8px; 
-          border-radius: 4px; 
-          font-weight: bold; 
-          font-size: 11px; 
-          min-width: 60px;
-          text-align: center;
+        .badge-pill {
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 600;
         }
-        .metric-vol { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
-        .metric-kd { background: rgba(16, 185, 129, 0.2); color: #34d399; }
-        .metric-kd-hard { background: rgba(239, 68, 68, 0.2); color: #f87171; }
-
-        @keyframes fadeInRow {
-          to { opacity: 1; transform: translateY(0); }
-        }
-
-        .scan-line {
+        .badge-easy { background: #ecfdf5; color: #059669; }
+        .badge-hard { background: #fef2f2; color: #dc2626; }
+        
+        .scan-beam {
           position: absolute;
-          top: 0; left: 0;
-          width: 100%; height: 2px;
-          background: ${accentColor};
-          box-shadow: 0 0 15px ${accentColor};
-          animation: scan 3s linear infinite;
+          top: 0; left: 0; right: 0; height: 4px;
+          background: ${trafficOrange};
+          box-shadow: 0 0 15px ${trafficOrange};
+          animation: scanDown 3s linear infinite;
           z-index: 10;
         }
-        @keyframes scan {
+        @keyframes scanDown {
           0% { top: 0; opacity: 0; }
           10% { opacity: 1; }
           90% { opacity: 1; }
           100% { top: 100%; opacity: 0; }
         }
+        @keyframes slideIn { to { opacity: 1; transform: translateY(0); } }
 
-        /* --- TICKER ANIMATION --- */
-        @keyframes scroll {
+        /* CARDS & GRIDS */
+        .feature-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 30px;
+        }
+        .clean-card {
+          background: white;
+          border-radius: 16px;
+          padding: 30px;
+          border: 1px solid #f1f5f9;
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+        }
+        .clean-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08);
+          border-color: ${primaryBlue}30;
+        }
+
+        /* PROCESS TIMELINE */
+        .process-list {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        .process-item {
+          display: flex;
+          gap: 24px;
+          padding: 24px;
+          background: white;
+          border-radius: 16px;
+          border: 1px solid #e2e8f0;
+          transition: 0.3s;
+        }
+        .process-item:hover {
+          border-color: ${primaryBlue};
+          background: #f8fbff;
+        }
+        .step-circle {
+          width: 50px;
+          height: 50px;
+          background: ${primaryBlue};
+          color: white;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 18px;
+          font-weight: bold;
+          flex-shrink: 0;
+          box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+        }
+
+        /* TYPE CARDS */
+        .type-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 24px;
+        }
+        .type-card {
+          border-radius: 20px;
+          padding: 30px;
+          border: 1px solid rgba(0,0,0,0.05);
+          transition: 0.3s;
+        }
+        .type-card:hover { transform: scale(1.02); }
+
+        /* CTA BOX */
+        .cta-box {
+          background: linear-gradient(135deg, ${primaryBlue}, ${secondaryPurple});
+          border-radius: 24px;
+          padding: 60px 20px;
+          text-align: center;
+          color: white;
+          box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.5);
+        }
+
+        /* TICKER */
+        .tools-scroller {
+          background: white;
+          border-top: 1px solid #f1f5f9;
+          border-bottom: 1px solid #f1f5f9;
+          padding: 40px 0;
+          overflow: hidden;
+        }
+        .ticker-track {
+          display: flex;
+          gap: 60px;
+          animation: ticker 30s linear infinite;
+          width: max-content;
+        }
+        @keyframes ticker {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        .bb-svc-tech-ticker {
-          overflow: hidden;
-          background: #f8fafc;
-          padding: 3rem 0;
-          border-bottom: 1px solid #e2e8f0;
-          position: relative;
-        }
-        .bb-svc-tech-track {
-          display: inline-flex;
+        .tool-name {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #cbd5e1;
           white-space: nowrap;
-          animation: scroll 25s linear infinite;
         }
-        .bb-svc-tech-track:hover { animation-play-state: paused; }
-        .bb-svc-tech-item {
-          font-weight: 800;
-          color: #94a3b8;
-          font-size: 1.8rem;
-          margin: 0 3rem;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          transition: color 0.3s;
+
+        /* STATS */
+        .stats-light {
+          background: white;
+          border-bottom: 1px solid #f1f5f9;
+          padding: 60px 0;
         }
-        .bb-svc-tech-item:hover { color: ${trafficColor}; }
+        .stat-item { text-align: center; }
+        .stat-val { font-size: 3rem; font-weight: 800; color: ${primaryBlue}; margin-bottom: 5px; }
+        .stat-lbl { font-size: 1.1rem; color: #64748b; font-weight: 500; }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+          .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+          .hero-light { text-align: center; }
+          .hero-btns { justify-content: center; }
+        }
       `}</style>
 
-      {/* HERO SECTION */}
-      <section className='bb-svc-hero-section'>
-        <div className='bb-svc-hero-content'>
-          <div className='bb-svc-hero-text'>
-            <div
-              style={{
-                display: 'inline-block',
-                padding: '5px 15px',
-                background: 'rgba(249, 115, 22, 0.1)',
-                color: trafficColor,
-                borderRadius: '20px',
-                fontSize: '0.8rem',
-                fontWeight: 'bold',
-                marginBottom: '15px'
-              }}
-            >
-              🔍 UNLOCK HIDDEN TRAFFIC
-            </div>
-            <h1 style={{ fontSize: '2.5rem', fontWeight: '800', lineHeight: '1.2', marginBottom: '1rem' }}>
-              Stop Guessing. <br />{' '}
-              <span style={{ color: trafficColor }}>Start Ranking.</span>
-            </h1>
-            <p style={{ fontSize: '1.1rem', color: '#94a3b8', marginBottom: '2rem' }}>
-              We find the high-volume, low-competition "Money Keywords" that
-              your competitors are missing.
-            </p>
-            <div className='bb-svc-hero-buttons' style={{ display: 'flex', gap: '1rem' }}>
-              <button className='bb-svc-btn-primary' style={{ background: trafficColor, color: 'white', border: 'none', padding: '12px 24px', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold' }}>
-                Get Free Keyword Audit
-              </button>
-              <button className='bb-svc-btn-secondary' style={{ borderColor: 'rgba(255,255,255,0.3)', background: 'transparent', color: 'white', border: '1px solid', padding: '12px 24px', borderRadius: '8px', cursor: 'pointer' }}>
-                See Sample Report
-              </button>
-            </div>
-          </div>
+      {/* --- HERO SECTION --- */}
+      <section className="hero-light">
+        {/* Background blobs */}
+        <div className="hero-shape" style={{ top: '-10%', left: '-5%', width: '500px', height: '500px', background: '#dbeafe' }}></div>
+        <div className="hero-shape" style={{ bottom: '10%', right: '-5%', width: '400px', height: '400px', background: '#f3e8ff' }}></div>
 
-          {/* HERO VISUAL: KEYWORD SCANNER */}
-          <div className='bb-svc-hero-visual'>
-            <div className='scanner-container'>
-              <div className='scan-line'></div>
-
-              {/* Fake Search Bar */}
-              <div className='search-bar-mock'>
-                <svg width='16' height='16' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'>
-                  <circle cx='11' cy='11' r='8' />
-                  <line x1='21' y1='21' x2='16.65' y2='16.65' />
-                </svg>
-                <span>best digital marketing agency</span>
-                <span style={{ marginLeft: 'auto', fontSize: '10px', color: '#94a3b8' }}>
-                  Analyzing...
-                </span>
-              </div>
-
-              {/* Header */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0 10px 10px', fontSize: '10px', color: '#64748b', fontWeight: 'bold', textTransform: 'uppercase' }}>
-                <span>Keyword</span>
-                <div style={{ display: 'flex', gap: '20px' }}>
-                  <span>Volume</span>
-                  <span>KD %</span>
-                </div>
-              </div>
-
-              {/* Results */}
-              <div className='result-row' style={{ animationDelay: '0.5s' }}>
-                <span className='kw-tag'>digital marketing services</span>
-                <div style={{ display: 'flex', gap: '10px' }}>
-                  <span className='metric-box metric-vol'>12.5K</span>
-                  <span className='metric-box metric-kd-hard'>85% (Hard)</span>
-                </div>
-              </div>
-
-              <div className='result-row' style={{ animationDelay: '1.0s', background: 'rgba(16, 185, 129, 0.05)' }}>
-                <span className='kw-tag' style={{ color: '#34d399' }}>affordable seo services india</span>
-                <div style={{ display: 'flex', gap: '10px' }}>
-                  <span className='metric-box metric-vol'>4.2K</span>
-                  <span className='metric-box metric-kd'>12% (Easy)</span>
-                </div>
-              </div>
-
-              <div className='result-row' style={{ animationDelay: '1.5s', background: 'rgba(16, 185, 129, 0.05)' }}>
-                <span className='kw-tag' style={{ color: '#34d399' }}>best web dev agency for startups</span>
-                <div style={{ display: 'flex', gap: '10px' }}>
-                  <span className='metric-box metric-vol'>1.8K</span>
-                  <span className='metric-box metric-kd'>8% (Easy)</span>
-                </div>
-              </div>
-
-              <div className='result-row' style={{ animationDelay: '2.0s' }}>
-                <span className='kw-tag'>marketing agency</span>
-                <div style={{ display: 'flex', gap: '10px' }}>
-                  <span className='metric-box metric-vol'>50K</span>
-                  <span className='metric-box metric-kd-hard'>92% (Hard)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* STATS */}
-      <section className='bb-svc-stats-section'>
-        <div className='bb-svc-stats-grid'>
-          <div className='bb-svc-stat-card'>
-            <div className='bb-svc-stat-number'><AnimatedCounter end={1} suffix='M+' /></div>
-            <div className='bb-svc-stat-label'>Keywords Tracked</div>
-          </div>
-          <div className='bb-svc-stat-card'>
-            <div className='bb-svc-stat-number'><AnimatedCounter end={500} suffix='%' /></div>
-            <div className='bb-svc-stat-label'>Traffic Increase</div>
-          </div>
-          <div className='bb-svc-stat-card'>
-            <div className='bb-svc-stat-number'>#1</div>
-            <div className='bb-svc-stat-label'>Rankings Achieved</div>
-          </div>
-          <div className='bb-svc-stat-card'>
-            <div className='bb-svc-stat-number'><AnimatedCounter end={100} suffix='+' /></div>
-            <div className='bb-svc-stat-label'>Niches Analyzed</div>
-          </div>
-        </div>
-      </section>
-
-      {/* --- MOVING TOOLS TICKER --- */}
-      <div className='bb-svc-tech-ticker'>
-        <div style={{ textAlign: 'center', marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '3px', fontWeight: 'bold', color: trafficColor }}>
-          POWERED BY ENTERPRISE DATA
-        </div>
-        <div className='bb-svc-tech-track'>
-          {seoTools.map((tool, i) => (<span key={`a-${i}`} className='bb-svc-tech-item'>{tool}</span>))}
-          {seoTools.map((tool, i) => (<span key={`b-${i}`} className='bb-svc-tech-item'>{tool}</span>))}
-        </div>
-      </div>
-
-      {/* FEATURES */}
-      <section className='bb-svc-features-section'>
-        <div className='bb-svc-section-header'>
-          <h2>Strategic Keyword Intelligence</h2>
-          <p>We go beyond search volume to find what actually sells.</p>
-        </div>
-        <div className='bb-svc-features-grid'>
-          {features.map((feature, index) => (
-            <Link key={index} to={feature.link || '#'} style={{ textDecoration: 'none' }}>
-              <FeatureCard {...feature} color={accentColor} />
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* ======================================================= */}
-      {/* ⚠️ NEW SECTION ADDED: IMAGE LEFT / CONTENT RIGHT ⚠️ */}
-      {/* ======================================================= */}
-      <section className="py-16 bg-slate-50 overflow-hidden" style={{ padding: '4rem 2rem', background: '#f8fafc' }}>
-        <div className="container mx-auto px-4 md:px-8" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+        <div className="max-w-container px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center hero-grid">
             
-            {/* Left Side: Image */}
-            <div className="relative group" style={{ position: 'relative' }}>
-              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-2xl opacity-30 blur-lg" style={{ position: 'absolute', inset: '-1rem', background: 'linear-gradient(to right, #0891b2, #9333ea)', opacity: '0.3', filter: 'blur(16px)', borderRadius: '1rem', zIndex: 0 }}></div>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white" style={{ position: 'relative', borderRadius: '1rem', overflow: 'hidden', border: '4px solid white', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', zIndex: 1 }}>
-                <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" 
-                  alt="Keyword Research Analysis" 
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
-                />
+            {/* Left Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-bold mb-6">
+                <Search size={14} /> Keyword Research Services in Noida
+              </div>
+              <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                Build SEO Strategies That <span className="text-gradient">Actually Rank</span>
+              </h1>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                Keyword research is the backbone of any successful SEO campaign. 
+                At Bits and Bytes IT Solution, we deliver data-driven research to help you 
+                rank higher, attract the right audience, and convert visitors into customers.
+              </p>
+              <div className="flex flex-wrap gap-4 hero-btns">
+                <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold text-lg shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-1 flex items-center gap-2">
+                  Get Free Audit <ArrowRight size={20} />
+                </button>
+                <button className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-lg font-bold text-lg hover:bg-slate-50 transition-all">
+                  View Sample Report
+                </button>
               </div>
             </div>
 
-            {/* Right Side: Content */}
-            <div className="space-y-8">
-              <div style={{ marginBottom: '2rem' }}>
-                <h2 style={{ fontSize: '2.25rem', fontWeight: 'bold', color: '#0f172a', lineHeight: '1.2', marginBottom: '1rem' }}>
-                  Strategic <span style={{ background: 'linear-gradient(to right, #0891b2, #9333ea)', WebkitBackgroundClip: 'text', color: 'transparent' }}>Keyword Research</span> Process
-                </h2>
-                <p style={{ fontSize: '1.125rem', color: '#475569' }}>
-                  We don't just guess; we use data-driven strategies to find the terms that will actually drive traffic and sales to your business.
-                </p>
-              </div>
+            {/* Right Visual - Light Mode Dashboard */}
+            <div className="relative">
+              <div className="scanner-card">
+                <div className="scan-beam"></div>
+                
+                {/* Mock Header */}
+                <div className="scanner-header">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                  </div>
+                  <div className="flex-1 bg-white border border-slate-200 rounded-md px-3 py-1 text-sm text-slate-500 flex justify-between items-center">
+                    <span>keyword research services noida...</span>
+                    <Search size={14} />
+                  </div>
+                </div>
 
-              {/* Process Points List */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                {processPoints.map((item, index) => (
-                  <div key={index} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                    {/* Icon/Number Circle */}
-                    <div style={{ flexShrink: 0, width: '2.5rem', height: '2.5rem', borderRadius: '9999px', background: '#cffafe', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '0.25rem' }}>
-                      <span style={{ color: '#0e7490', fontWeight: 'bold', fontSize: '1.125rem' }}>{index + 1}</span>
-                    </div>
-                    
-                    {/* Text Content */}
-                    <div>
-                      <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#1e293b', marginBottom: '0.25rem' }}>
-                        {item.title}
-                      </h3>
-                      <p style={{ color: '#475569', lineHeight: '1.625' }}>
-                        {item.description}
-                      </p>
+                {/* Mock Body */}
+                <div className="scanner-body">
+                  <div className="bg-slate-50 px-5 py-2 flex justify-between text-xs font-bold text-slate-400 uppercase tracking-wider">
+                    <span>Keyword</span>
+                    <div className="flex gap-8">
+                      <span>Vol</span>
+                      <span>KD%</span>
                     </div>
                   </div>
-                ))}
+
+                  <div className="keyword-row" style={{ animationDelay: '0.2s' }}>
+                    <span className="font-medium text-slate-700">seo services noida</span>
+                    <div className="flex gap-6 items-center w-32 justify-end">
+                      <span className="text-slate-600">5.2K</span>
+                      <span className="badge-pill badge-hard">78%</span>
+                    </div>
+                  </div>
+
+                  <div className="keyword-row bg-blue-50/50" style={{ animationDelay: '0.8s' }}>
+                    <span className="font-medium text-blue-700">best digital agency sector 62</span>
+                    <div className="flex gap-6 items-center w-32 justify-end">
+                      <span className="text-slate-600">1.8K</span>
+                      <span className="badge-pill badge-easy">15%</span>
+                    </div>
+                  </div>
+
+                  <div className="keyword-row bg-blue-50/50" style={{ animationDelay: '1.4s' }}>
+                    <span className="font-medium text-blue-700">affordable seo near me</span>
+                    <div className="flex gap-6 items-center w-32 justify-end">
+                      <span className="text-slate-600">3.4K</span>
+                      <span className="badge-pill badge-easy">22%</span>
+                    </div>
+                  </div>
+
+                  <div className="keyword-row" style={{ animationDelay: '2.0s' }}>
+                    <span className="font-medium text-slate-700">digital marketing</span>
+                    <div className="flex gap-6 items-center w-32 justify-end">
+                      <span className="text-slate-600">165K</span>
+                      <span className="badge-pill badge-hard">95%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Floating Decoration */}
+              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 animate-bounce" style={{ animationDuration: '3s' }}>
+                 <div className="flex items-center gap-3">
+                   <div className="bg-green-100 p-2 rounded-full text-green-600">
+                     <TrendingUp size={20} />
+                   </div>
+                   <div>
+                     <div className="text-xs text-slate-400">Potential Traffic</div>
+                     <div className="font-bold text-slate-800">+245%</div>
+                   </div>
+                 </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* --- STATS SECTION --- */}
+      <section className="stats-light">
+        <div className="max-w-container px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="stat-item">
+            <div className="stat-val"><AnimatedCounter end={1000} suffix="+" /></div>
+            <div className="stat-lbl">Keywords Mapped</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-val"><AnimatedCounter end={85} suffix="%" /></div>
+            <div className="stat-lbl">Ranking Boost</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-val"><AnimatedCounter end={200} suffix="+" /></div>
+            <div className="stat-lbl">Happy Clients</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-val"><AnimatedCounter end={98} suffix="%" /></div>
+            <div className="stat-lbl">Retention Rate</div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- FEATURES GRID --- */}
+      <section className="section-padding bg-white">
+        <div className="max-w-container px-6">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Strategic Keyword Intelligence</h2>
+            <p className="text-lg text-slate-500">We go beyond simple search volume. We find keywords that actually drive revenue.</p>
+          </div>
+
+          <div className="feature-grid">
+            {features.map((feature, index) => (
+              <div key={index} className="clean-card group">
+                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${feature.bg} ${feature.color}`}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- PROCESS SECTION --- */}
+      <section className="section-padding bg-slate-50">
+        <div className="max-w-container px-6">
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+             
+             {/* Sticky Content */}
+             <div className="sticky top-24">
+               <span className="text-blue-600 font-bold tracking-wide uppercase text-sm">Our Methodology</span>
+               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-6">
+                 A Structured Approach to <br/> SEO Success
+               </h2>
+               <p className="text-lg text-slate-600 mb-8">
+                 We don't guess. We use a 6-step data-driven process to identify, analyze, and map the most profitable keywords for your specific niche.
+               </p>
+               <img 
+                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Data Analysis" 
+                 className="rounded-2xl shadow-2xl border-4 border-white w-full object-cover h-64"
+               />
+             </div>
+
+             {/* Steps List */}
+             <div className="process-list">
+               {processPoints.map((point, i) => (
+                 <div key={i} className="process-item group">
+                   <div className="step-circle group-hover:bg-indigo-600 transition-colors">
+                     {i + 1}
+                   </div>
+                   <div>
+                     <h3 className="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2">
+                       {point.title}
+                     </h3>
+                     <p className="text-slate-600 leading-relaxed">
+                       {point.description}
+                     </p>
+                   </div>
+                 </div>
+               ))}
+             </div>
+
+           </div>
+        </div>
+      </section>
+
+      {/* --- TYPES OF KEYWORDS --- */}
+      <section className="section-padding bg-white">
+        <div className="max-w-container px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Types of Keywords We Research</h2>
+            <p className="text-lg text-slate-500">Comprehensive coverage for every stage of your customer's journey.</p>
+          </div>
+
+          <div className="type-grid">
+            {keywordTypes.map((type, index) => (
+              <div key={index} className="type-card" style={{ background: type.gradient }}>
+                <h3 className="text-xl font-bold text-slate-800 mb-2">{type.title}</h3>
+                <p className="text-slate-600 mb-4 text-sm">{type.description}</p>
+                <span 
+                  className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-white shadow-sm"
+                  style={{ color: type.accent }}
+                >
+                  {type.stats}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- MARKETING GOALS & IMPORTANCE --- */}
+      <section className="section-padding bg-slate-50">
+        <div className="max-w-container px-6">
+          <div className="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="p-10 md:p-14">
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">Why Keyword Research Matters?</h2>
+                <div className="space-y-4">
+                  {[
+                    'Higher search engine ranking',
+                    'Targeted organic traffic',
+                    'Better content planning',
+                    'Increased conversion rate',
+                    'Strong competitive advantage'
+                  ].map((item, i) => (
+                     <div key={i} className="flex items-center gap-3">
+                       <CheckCircle size={20} className="text-green-500 shrink-0" />
+                       <span className="text-slate-700 font-medium">{item}</span>
+                     </div>
+                  ))}
+                </div>
+                <div className="mt-8 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg text-blue-800 text-sm font-medium">
+                  "Our research ensures every page on your site targets a specific intent."
+                </div>
+              </div>
+
+              <div className="bg-slate-50 p-10 md:p-14 border-l border-slate-100">
+                <h3 className="text-xl font-bold text-slate-900 mb-6">Aligned with Your Goals</h3>
+                <div className="grid grid-cols-1 gap-4">
+                  {marketingGoals.map((goal, i) => (
+                    <div key={i} className="flex gap-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                      <div className="mt-1">{goal.icon}</div>
+                      <div>
+                        <h4 className="font-bold text-slate-800">{goal.title}</h4>
+                        <p className="text-xs text-slate-500 mt-1">{goal.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className='bb-svc-testimonials-section'>
-        <div className='bb-svc-section-header'>
-          <h2>Ranking Success</h2>
+      {/* --- TOOLS TICKER --- */}
+      <section className="tools-scroller">
+        <div className="max-w-container px-6 mb-6 text-center">
+           <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Powered by Premium Enterprise Tools</p>
         </div>
-        <div className='bb-svc-testimonials-grid'>
-          <TestimonialCard quote='We stopped writing random blogs and started targeting the keywords they found. Traffic tripled in 4 months.' author='Mark Evans' role='CMO' company='TechFlow' avatar='ME' />
-          <TestimonialCard quote='Their gap analysis showed us exactly where our competitors were weak. We took their traffic.' author='Sarah Jenkins' role='Owner' company='PetSupply' avatar='SJ' />
-          <TestimonialCard quote='The intent mapping was a game changer. We get fewer visitors now, but WAY more sales.' author='David Ross' role='Founder' company='LawFirm SEO' avatar='DR' />
+        <div className="ticker-track">
+          {[...seoTools, ...seoTools].map((tool, i) => (
+            <span key={i} className="tool-name">{tool}</span>
+          ))}
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className='bb-svc-faq-section'>
-        <div className='bb-svc-section-header'>
-          <h2>Keyword FAQ</h2>
+      {/* --- TESTIMONIALS --- */}
+      <section className="section-padding bg-slate-50">
+        <div className="max-w-container px-6">
+           <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900">Client Success Stories</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <TestimonialCard 
+              quote='Their keyword research helped us target the right audience. Our organic traffic increased by 300%!' 
+              author='Rahul Sharma' 
+              role='Marketing Head' 
+              company='E-Commerce Store' 
+              avatar='RS' 
+            />
+            <TestimonialCard 
+              quote='The search intent analysis was revolutionary. We now create content that actually answers customer questions.' 
+              author='Priya Mehta' 
+              role='Content Manager' 
+              company='EdTech Startup' 
+              avatar='PM' 
+            />
+            <TestimonialCard 
+              quote='Local SEO keywords they provided helped us dominate the Noida market. Best investment ever!' 
+              author='Vikram Singh' 
+              role='Business Owner' 
+              company='Local Service Company' 
+              avatar='VS' 
+            />
+          </div>
         </div>
-        <div className='bb-svc-faq-container'>
-          {faqs.map((faq, index) => (
-            <FAQItem key={index} {...faq} />
-          ))}
+      </section>
+
+      {/* --- FAQ SECTION --- */}
+      <section className="section-padding bg-white">
+        <div className="max-w-container px-6">
+           <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900">Frequently Asked Questions</h2>
+          </div>
+          <div className='bb-svc-faq-container max-w-3xl mx-auto'>
+            {faqs.map((faq, index) => (
+              <FAQItem key={index} {...faq} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- CTA SECTION --- */}
+      <section className="py-20 bg-white">
+        <div className="max-w-container px-6">
+          <div className="cta-box">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Start Ranking with Smart Research</h2>
+            <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-10">
+              Stop guessing. Start dominating the search results in Noida with a custom keyword strategy tailored to your business.
+            </p>
+            <button className="bg-white text-blue-600 px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-orange-50 transition-colors flex items-center gap-2 mx-auto">
+              Get Your Custom Strategy <Zap size={20} className="text-orange-500"/>
+            </button>
+          </div>
         </div>
       </section>
 

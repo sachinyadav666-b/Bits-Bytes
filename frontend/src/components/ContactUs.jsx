@@ -101,11 +101,11 @@ const Contact = () => {
                 {
                   icon: <MapPin className="text-white" />,
                   title: "Visit HQ",
-                  val: "Sector 63, Noida, UP",
+                  val: "Office No.1, G-9, G Block, Sector 63, Noida, Uttar Pradesh 201309",
                   bg: "bg-cyan-500",
                 },
               ].map((item, i) => (
-                <div
+                <div  
                   key={i}
                   className="flex items-center gap-5 p-5 bg-white rounded-2xl shadow"
                 >
@@ -303,7 +303,7 @@ const Contact = () => {
                 {/* Placeholder map box until you provide URL */}
                 <div className="w-full h-60 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 relative group">
                   <iframe 
-                    src="about:blank" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3486.1701594104425!2d48.1280627!3d29.100657399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf0774248804e7%3A0xd9c66daaa589affe!2sBits%20and%20Bytes%20IT%20Solution%20in%20Kuwait!5e0!3m2!1sen!2sin!4v1768979197462!5m2!1sen!2sin" 
                     width="100%" 
                     height="100%" 
                     style={{ border: 0 }} 

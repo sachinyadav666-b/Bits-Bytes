@@ -1,19 +1,18 @@
 import express from "express";
-import upload from "../middleware/upload.js";
 import {
   createBlog,
   getBlogs,
-  getBlogBySlug, // 🔥 Name change
+  getBlogBySlug,
   updateBlog,
-  deleteBlog
+  deleteBlog,
 } from "../controllers/blogController.js";
 
 const router = express.Router();
 
-router.post("/create", upload.single("image"), createBlog);
+router.post("/create", createBlog);
 router.get("/", getBlogs);
-router.get("/:slug", getBlogBySlug); // 🔥 Route change: /api/blogs/my-blog-title
-router.put("/:id", upload.single("image"), updateBlog); // Update ke liye ID hi rakhte hain internal use ke liye
-router.delete("/:id", deleteBlog); // Delete ke liye bhi ID hi theek hai
+router.get("/:slug", getBlogBySlug);
+router.put("/:id", updateBlog);
+router.delete("/:id", deleteBlog);
 
 export default router;

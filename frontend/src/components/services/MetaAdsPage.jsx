@@ -11,75 +11,59 @@ import {
 export default function MetaAdsPage() {
   const accentColor = '#0866FF'; // Meta Blue
 
-  // --- 1. FEATURES DATA (Updated with Images) ---
+  // --- 1. FEATURES DATA (Updated with Your Specific Content) ---
   const features = [
     {
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80",
-      title: "Facebook & Instagram Ads",
-      description: "Reach 3 billion+ users across Meta's platforms with highly targeted campaigns. From feed ads to Stories and Reels, we optimize for maximum engagement and conversions on both Facebook and Instagram."
+      image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80",
+      title: "For Business Owners",
+      description: "Get regular inquiries, calls, and online sales. We focus on ROI—not just 'likes'—to generate quality leads at low cost and boost conversion rates."
     },
     {
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
-      title: "Custom Audience Targeting",
-      description: "Target users by demographics, interests, behaviors, and lookalike audiences. We build custom audiences from your customer data, website visitors, and app users for precise targeting and higher ROI."
+      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80",
+      title: "Local Business Targeting",
+      description: "Perfect for businesses in Noida & Delhi NCR. We use location-based targeting to drive walk-ins, local inquiries, and Call/WhatsApp clicks."
     },
     {
       image: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=600&q=80",
-      title: "Carousel & Video Ads",
-      description: "Eye-catching creative formats that tell your brand story and drive 10x more engagement. Professional video ads, carousel showcases, collection ads, and interactive content optimized for each placement."
+      title: "Startups & Brand Awareness",
+      description: "Build trust and recognition with high-reach campaigns. We use engaging Story, Reel, and Feed promotions to ensure strong brand recall."
     },
     {
-      image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&w=600&q=80",
-      title: "Retargeting Campaigns",
-      description: "Re-engage website visitors and cart abandoners with personalized ads that bring them back. Dynamic retargeting shows users exactly what they viewed on your site with compelling offers."
+      image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=600&q=80",
+      title: "E-Commerce Solutions",
+      description: "Turn visitors into buyers with Product Catalog ads, Dynamic Retargeting, Cart Abandonment campaigns, and Sale/Offer promotions."
     },
     {
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
-      title: "Advanced Pixel Tracking",
-      description: "Complete Meta Pixel and Conversions API setup for accurate tracking. Track every action from page views to purchases, enabling data-driven optimization and attribution."
+      title: "Smart Audience Strategy",
+      description: "We research and create the right audience using Interest-based targeting, Custom audiences (leads/visitors), and Lookalike audiences."
     },
     {
-      image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80",
-      title: "A/B Creative Testing",
-      description: "Continuously optimize campaigns with split testing on creatives, copy, audiences, and placements. We find what works and scale winners fast for maximum ROAS."
+      image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&w=600&q=80",
+      title: "Creative Ads That Convert",
+      description: "Good targeting needs great creatives. We design eye-catching images, videos, and clear ad copy with strong CTAs that stop users from scrolling."
     }
   ];
 
-  // --- CAMPAIGN TYPES FOR SEO ---
-  const campaignTypes = [
-    { title: "Awareness Campaigns", description: "Maximize reach and brand recall among your target audience. Perfect for product launches, brand building, and market entry.", icon: "📢" },
-    { title: "Traffic Campaigns", description: "Drive quality visitors to your website or landing pages. Optimized for engagement and time on site.", icon: "🌐" },
-    { title: "Lead Generation", description: "Capture leads directly within Facebook/Instagram using native lead forms. No website required.", icon: "📝" },
-    { title: "Conversion Campaigns", description: "Optimize for specific actions like purchases, sign-ups, or form submissions using Meta Pixel.", icon: "💰" },
-    { title: "Catalog Sales", description: "Dynamic product ads for e-commerce showing relevant products from your catalog to interested shoppers.", icon: "🛒" },
-    { title: "App Install Campaigns", description: "Drive app downloads and engagement with targeted campaigns optimized for installs and in-app actions.", icon: "📱" }
-  ];
-
-  // --- 2. PROCESS DATA ---
+  // --- 2. PROCESS DATA (Aligned with your Analytics & Strategy) ---
   const process = [
-    { title: "Strategy & Audit", description: "We analyze your business, competitors, target audience, and existing ad accounts to build a comprehensive winning strategy tailored to your goals." },
-    { title: "Pixel & Tracking Setup", description: "Complete Meta Pixel installation, Conversions API setup, custom event tracking, and analytics integration for accurate data and optimization." },
-    { title: "Audience Research", description: "Deep audience analysis to create custom audiences, lookalike audiences, and interest-based targeting segments that reach your ideal customers." },
-    { title: "Creative Development", description: "Design scroll-stopping ad creatives including images, videos, carousels, and Stories optimized for each placement and audience segment." },
-    { title: "Campaign Launch", description: "Strategic campaign structure with proper budget allocation, bidding strategy, and controlled rollout for optimal learning and performance." },
-    { title: "Optimize & Scale", description: "Continuous optimization based on data - scaling winners, testing new audiences, and improving ROAS month over month." }
+    { title: "Audience Research", description: "We identify your ideal customers using Interest-based, Behavior-based, and Location-based targeting (Noida/Delhi NCR)." },
+    { title: "Creative Design", description: "Designing visually appealing ads (Images, Videos, Reels) with clear simple copy and strong Call-to-Actions." },
+    { title: "Campaign Setup", description: "Setting up the right campaign type—whether for Lead Gen, Sales, or Local Footfall—optimized for your goals." },
+    { title: "Smart Retargeting", description: "Implementing retargeting strategies to bring back warm users and website visitors who didn't convert initially." },
+    { title: "Analytics Tracking", description: "We track Reach, Clicks, Engagement, Cost per Lead/Sale, and Audience Performance to ensure transparency." },
+    { title: "Optimization", description: "Continuous monitoring and tweaking to ensure you get the best Return on Investment (ROI) and business growth." }
   ];
 
   const faqs = [
-    { question: "How much should I budget for Meta Ads?", answer: "We recommend starting with ₹30,000-50,000/month for meaningful testing. Once we identify winning campaigns and audiences, you can scale to ₹1-5 lakhs+ for maximum results. The key is having enough budget to gather statistically significant data." },
-    { question: "How long before I see results?", answer: "Most campaigns start showing initial data within 3-7 days. The learning phase typically takes 7-14 days. Full optimization for best performance usually takes 2-4 weeks as we test audiences, creatives, and placements." },
-    { question: "Do you create the ad creatives?", answer: "Yes! Our design team creates scroll-stopping images, carousels, and video ads tailored to your brand and audience. We produce multiple variations for A/B testing and continuous improvement." },
-    { question: "What's your management fee?", answer: "We charge 15-20% of ad spend (minimum ₹15,000/month) which includes strategy, setup, creative production, optimization, and detailed reporting. Larger accounts may qualify for reduced rates." },
-    { question: "Can you run ads for my e-commerce store?", answer: "Absolutely! We specialize in e-commerce advertising with catalog ads, dynamic retargeting, conversion optimization, and full funnel strategies that drive sales and maximize ROAS." },
-    { question: "What is the Meta Pixel and why do I need it?", answer: "The Meta Pixel is code on your website that tracks user actions. It's essential for conversion tracking, building retargeting audiences, and optimizing campaigns for specific actions like purchases or leads." },
-    { question: "Can you target my competitors' audiences?", answer: "Yes! We can target users who follow your competitors, have interests related to competitor brands, and create lookalike audiences based on competitor customer profiles for market share growth." },
-    { question: "What reporting do you provide?", answer: "We provide weekly performance snapshots and comprehensive monthly reports covering impressions, reach, engagement, conversions, cost metrics, ROAS, and actionable insights with a real-time dashboard." },
-    { question: "Do you handle both Facebook and Instagram?", answer: "Yes! We manage campaigns across all Meta placements including Facebook Feed, Stories, Reels, Instagram Feed, Stories, Reels, Messenger, and the Audience Network with optimization based on performance." },
-    { question: "What industries do you work with?", answer: "We've successfully run Meta Ads for e-commerce, education, real estate, healthcare, B2B services, local businesses, and more. Our strategies are customized for each industry's unique audience and conversion cycle." }
+    { question: "For which audiences are Meta Ads best?", answer: "Meta Ads are ideal for Small & Medium businesses, Startups, E-Commerce brands, Real Estate, Coaching institutes, and Local Service providers." },
+    { question: "How do you help local businesses in Noida?", answer: "We use precise location-based targeting around Noida and Delhi NCR, along with Call & WhatsApp click ads to drive local inquiries and walk-ins." },
+    { question: "Do you focus on Likes or Sales?", answer: "Our focus is strictly on Return on Investment (ROI). We create campaigns to generate quality leads, inquiries, and sales, not just vanity metrics like 'likes'." },
+    { question: "What is your Retargeting Strategy?", answer: "We create Custom Audiences from your website visitors and leads to show them specific ads (Warm Users), increasing the chance of conversion." },
   ];
 
   const techStack = [
-    "Facebook Ads", "Instagram Ads", "Meta Business Suite", "Meta Pixel", "Conversion API", "Advantage+", "Reels Ads", "Stories Ads", "Messenger Ads", "WhatsApp Ads"
+    "Facebook Ads", "Instagram Ads", "Meta Business Suite", "Lookalike Audiences", "Retargeting", "Catalog Ads", "Reels Ads", "Lead Forms", "WhatsApp Ads"
   ];
 
   return (
@@ -154,7 +138,7 @@ export default function MetaAdsPage() {
           50% { transform: translateY(-10px); }
         }
 
-        /* --- ✅ CUSTOM CARD STYLES (Features) --- */
+        /* --- CUSTOM CARD STYLES --- */
         .bb-svc-features-grid {
           display: grid;
           grid-template-columns: 1fr;
@@ -214,7 +198,7 @@ export default function MetaAdsPage() {
             margin-bottom: 1rem;
         }
 
-        /* --- ✅ UNIQUE PROCESS SECTION STYLES --- */
+        /* --- UNIQUE PROCESS SECTION STYLES --- */
         .bb-process-unique-section {
           padding: 80px 20px;
           background: #f8fafc;
@@ -316,10 +300,10 @@ export default function MetaAdsPage() {
         <div className="bb-svc-hero-content">
           <div className="bb-svc-hero-text">
             <div style={{ display: 'inline-block', padding: '6px 16px', background: 'rgba(255, 255, 255, 0.15)', color: 'white', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 'bold', marginBottom: '15px', letterSpacing: '0.05em' }}>
-              📱 META ADVERTISING
+              📱 META ADS SERVICES IN NOIDA
             </div>
-            <h1>Reach Billions on <br/><span style={{color: '#ffffff'}}>Facebook & Instagram</span></h1>
-            <p>Turn scrollers into buyers with data-driven Meta Ads campaigns that deliver measurable ROI.</p>
+            <h1>Reach the Right Audience <br/><span style={{color: '#ffffff'}}>on Facebook & Instagram</span></h1>
+            <p>If your business needs immediate leads, increased sales, and a strong brand presence, Meta Ads are the best option for you.</p>
 
             <div className="bb-svc-hero-buttons">
               <Link to="/contact-us">
@@ -349,20 +333,20 @@ export default function MetaAdsPage() {
       <section className="bb-svc-stats-section">
         <div className="bb-svc-stats-grid">
           <div className="bb-svc-stat-card">
-            <div className="bb-svc-stat-number" style={{color: accentColor}}>₹<AnimatedCounter end={5} suffix="Cr+" /></div>
-            <div className="bb-svc-stat-label">Ad Spend Managed</div>
+            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={100} suffix="%" /></div>
+            <div className="bb-svc-stat-label">Audience Focus</div>
           </div>
           <div className="bb-svc-stat-card">
-            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={300} suffix="%" /></div>
-            <div className="bb-svc-stat-label">Avg. ROAS</div>
+            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={10} suffix="X" /></div>
+            <div className="bb-svc-stat-label">Better Targeting</div>
           </div>
           <div className="bb-svc-stat-card">
-            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={10} suffix="M+" /></div>
-            <div className="bb-svc-stat-label">Impressions Delivered</div>
+            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={24} suffix="/7" /></div>
+            <div className="bb-svc-stat-label">Campaign Monitoring</div>
           </div>
           <div className="bb-svc-stat-card">
-            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={50} suffix="+" /></div>
-            <div className="bb-svc-stat-label">Brands Scaled</div>
+            <div className="bb-svc-stat-number" style={{color: accentColor}}><AnimatedCounter end={500} suffix="+" /></div>
+            <div className="bb-svc-stat-label">Leads Generated</div>
           </div>
         </div>
       </section>
@@ -370,7 +354,7 @@ export default function MetaAdsPage() {
       {/* TECH TICKER */}
       <div className="bb-svc-tech-ticker">
         <div style={{textAlign:'center', marginBottom:'1.5rem', textTransform:'uppercase', fontSize:'0.75rem', letterSpacing:'3px', fontWeight:'bold', color: accentColor}}>
-          PLATFORMS & TOOLS WE USE
+          PLATFORMS & STRATEGIES
         </div>
         <div className="bb-svc-tech-track">
            {[...techStack, ...techStack].map((tech, i) => (
@@ -379,11 +363,11 @@ export default function MetaAdsPage() {
         </div>
       </div>
 
-      {/* ✅ FEATURES SECTION (UPDATED WITH IMAGES) */}
+      {/* FEATURES SECTION */}
       <section className="bb-svc-features-section">
         <div className="bb-svc-section-header">
-          <h2>Why Our Meta Ads Convert</h2>
-          <p>Strategic campaigns built on data, creativity, and continuous optimization.</p>
+          <h2>Why Choose Our Meta Ads?</h2>
+          <p>We emphasize audience-based advertising to ensure your ad appears only to those likely to convert.</p>
         </div>
         <div className="bb-svc-features-grid">
           {features.map((f, i) => (
@@ -400,7 +384,7 @@ export default function MetaAdsPage() {
         </div>
       </section>
 
-      {/* ✅ UNIQUE PROCESS SECTION (SPLIT LAYOUT) */}
+      {/* UNIQUE PROCESS SECTION */}
       <section className="bb-process-unique-section">
         <div className="bb-process-split-container">
             
@@ -415,8 +399,8 @@ export default function MetaAdsPage() {
 
             {/* RIGHT SIDE: TIMELINE CONTENT */}
             <div className="bb-process-right-content">
-                <h2>Our Campaign Process</h2>
-                <p className="lead">A proven framework for Meta Ads success. From pixel perfect setup to scaling winning creatives.</p>
+                <h2>Analytics & Tracking</h2>
+                <p className="lead">We create Meta ad campaigns with a focus on Return on Investment (ROI), ensuring performance and transparency.</p>
 
                 <div className="bb-audit-timeline">
                     {process.map((step, index) => (
@@ -442,9 +426,9 @@ export default function MetaAdsPage() {
           <h2>Client Success Stories</h2>
         </div>
         <div className="bb-svc-testimonials-grid">
-          <TestimonialCard quote="Our ROAS went from 1.5x to 4.2x in just 2 months. The team's targeting strategy is incredible." author="Sneha Gupta" role="Founder, FashionHub" avatar="SG" />
-          <TestimonialCard quote="We scaled from ₹50K to ₹5L monthly ad spend while maintaining profitability. Highly recommended!" author="Rahul Mehra" role="CEO, TechGadgets" avatar="RM" />
-          <TestimonialCard quote="Their creative team produces ads that actually stop the scroll. Our CTR improved by 150%." author="Priya Singh" role="Marketing Head, BeautyBox" avatar="PS" />
+          <TestimonialCard quote="Bits and Bytes IT Solution helped us target local customers in Noida. The walk-ins to our store increased significantly." author="Ramesh Gupta" role="Shop Owner" company="Noida Retail" avatar="RG" />
+          <TestimonialCard quote="As a startup, we needed brand awareness. Their Instagram Reels strategy got us thousands of impressions and new followers." author="Anjali Verma" role="Co-Founder" company="StyleUp" avatar="AV" />
+          <TestimonialCard quote="The E-commerce retargeting ads were a game changer. We recovered so many abandoned carts thanks to their strategy." author="Vikram Singh" role="Director" company="Online Mart" avatar="VS" />
         </div>
       </section>
 
@@ -462,11 +446,11 @@ export default function MetaAdsPage() {
 
       {/* CTA SECTION */}
       <section className="bb-svc-cta-section" style={{background: `linear-gradient(135deg, ${accentColor}, #1877F2)`}}>
-        <h2>Ready to Scale with Meta Ads?</h2>
-        <p>Get a free audit of your current campaigns or start fresh with a winning strategy.</p>
+        <h2>Start Meta Ads for Your Target Audience</h2>
+        <p>If you wish to target the correct audience, develop quality leads, and expand at a faster rate, let us help you.</p>
         <Link to="/contact-us">
           <button className="bb-svc-btn-primary" style={{background: 'white', color: accentColor, border: 'none'}}>
-            Get Free Ad Audit
+            Get Started Today
           </button>
         </Link>
       </section>

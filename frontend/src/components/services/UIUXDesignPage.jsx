@@ -58,7 +58,7 @@ export default function UIUXDesignPage() {
       <SEOHead title={pageTitle} description={pageDescription} keywords={pageKeywords} canonical="/services/ui-ux-design" breadcrumbs={breadcrumbs} structuredData={faqSchema} />
       <main className='bg-white text-slate-900 overflow-hidden'>
         {/* Hero */}
-        <section className='relative py-20 lg:py-32 overflow-hidden'>
+        <section className='relative py-20 lg:py-12 overflow-hidden'>
           <div className='absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-pink-100 via-rose-50 to-transparent rounded-full -translate-y-1/2 translate-x-1/4 opacity-60' />
           <div className='absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-purple-100 via-violet-50 to-transparent rounded-full translate-y-1/2 -translate-x-1/4 opacity-60' />
           <div className='container mx-auto px-4 md:px-6 relative z-10'>
@@ -107,23 +107,56 @@ export default function UIUXDesignPage() {
         </section>
 
         {/* Who We Work With */}
-        <section className='py-20 bg-white'>
-          <div className='container mx-auto px-4 md:px-6'>
-            <div className='grid lg:grid-cols-2 gap-12 items-center'>
-              <div>
-                <h2 className='text-3xl md:text-4xl font-black text-slate-900 mb-6'>Who We <span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600'>Work With</span></h2>
-                <p className='text-lg text-slate-600 mb-6 leading-relaxed'>We partner with startups, SMEs, enterprises, and organizations across industries. Our UI/UX design services are customized to meet diverse requirements—from launching a new product to redesigning an existing platform.</p>
-                <p className='text-slate-600 mb-6 leading-relaxed'>Our solutions are ideal for businesses that want to:</p>
-                <div className='space-y-3'>
-                  {['Create user-friendly digital products', 'Improve conversion rates and engagement', 'Build consistent brand experiences', 'Reduce user friction and drop-offs', 'Launch market-ready designs faster'].map((item, i) => (<div key={i} className='flex items-center gap-3'><CheckCircle size={20} className='text-pink-500 flex-shrink-0' /><span className='text-slate-700'>{item}</span></div>))}
-                </div>
-              </div>
-              <div className='grid grid-cols-2 gap-4'>
-                {clientTypes.map((item, i) => (<div key={i} className='bg-slate-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all'><item.icon size={32} className='mx-auto mb-3 text-pink-500' /><div className='text-lg font-bold text-slate-900'>{item.label}</div><div className='text-sm text-slate-500'>{item.desc}</div></div>))}
-              </div>
+      <section className='py-20 bg-white'>
+  <div className='container mx-auto px-4 md:px-6'>
+    <div className='grid lg:grid-cols-2 gap-12 items-center'>
+      <div>
+        <h2 className='text-3xl md:text-4xl font-black text-slate-900 mb-6'>
+          Who We <span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600'>Work With</span>
+        </h2>
+        <p className='text-lg text-slate-600 mb-6 leading-relaxed'>
+          We partner with startups, SMEs, enterprises, and organizations across industries. Our UI/UX design services are customized to meet diverse requirements—from launching a new product to redesigning an existing platform.
+        </p>
+        <p className='text-slate-600 mb-6 leading-relaxed'>
+          Our solutions are ideal for businesses that want to:
+        </p>
+        <div className='space-y-3'>
+          {['Create user-friendly digital products', 'Improve conversion rates and engagement', 'Build consistent brand experiences', 'Reduce user friction and drop-offs', 'Launch market-ready designs faster'].map((item, i) => (
+            <div key={i} className='flex items-center gap-3'>
+              <CheckCircle size={20} className='text-pink-500 flex-shrink-0' />
+              <span className='text-slate-700'>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* UPDATED CARDS WITH INCREASED SIZE - Pink/Rose Theme */}
+      <div className='grid grid-cols-2 gap-5'>
+        {clientTypes.map((item, i) => (
+          <div 
+            key={i} 
+            className='bg-gradient-to-br from-white to-pink-50/20 rounded-2xl p-7 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-pink-100 hover:border-pink-300 group'
+          >
+            {/* Icon Container - Bigger */}
+            <div className='mb-5 p-4 bg-gradient-to-r from-pink-50 to-rose-50 rounded-full w-20 h-20 mx-auto flex items-center justify-center group-hover:scale-110 transition-transform duration-300'>
+              <item.icon size={38} className='text-pink-600' />
+            </div>
+            
+            {/* Title - Bigger */}
+            <div className='text-xl font-black text-slate-900 mb-3 group-hover:text-pink-700 transition-colors'>
+              {item.label}
+            </div>
+            
+            {/* Description - Bigger */}
+            <div className='text-base text-slate-600 leading-relaxed'>
+              {item.desc}
             </div>
           </div>
-        </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Services Grid */}
         <section className='py-20 bg-slate-50'>

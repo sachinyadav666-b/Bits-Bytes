@@ -86,7 +86,7 @@ const Projects = () => {
       </div>
 
       {/* ---------------- HERO SECTION ---------------- */}
-      <section className="relative z-10 pt-40 pb-16 px-6">
+      <section className="relative z-10 pt-20 pb-16 px-6">
         <div className="container mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-cyan-200 rounded-full bg-cyan-50 shadow-sm">
             <span className="w-2 h-2 bg-cyan-600 rounded-full animate-pulse"></span>

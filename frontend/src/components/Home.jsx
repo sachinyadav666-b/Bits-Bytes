@@ -723,9 +723,6 @@ const FAQS = [
   { q: 'Do you develop mobile apps for both iOS and Android?', a: 'Yes! We develop native apps for iOS (Swift) and Android (Kotlin), as well as cross-platform apps using Flutter and React Native. Cross-platform development saves 40% cost while maintaining native performance.' },
   { q: 'How long does it take to see results from digital marketing?', a: 'SEO takes 2–3 months for stable results, while Google Ads & Meta Ads can generate qualified leads within 24–48 hours of campaign launch. We provide weekly reports so you can track progress.' },
   { q: 'Do you provide website and app maintenance?', a: 'Yes! We offer comprehensive monthly and yearly maintenance plans including security updates, bug fixes, performance optimization, and feature additions. 24/7 support is available for all clients.' },
-  { q: 'Can you help scale ads and improve ROI?', a: 'Absolutely! We specialize in performance marketing with proven strategies to reduce Cost Per Lead (CPL) and maximize Return on Investment (ROI). Our average client sees 5X ROAS within 90 days.' },
-  { q: 'What technologies do you use for web development?', a: 'We use modern technologies including React, Next.js, Vue.js for frontend; Node.js, Python, PHP/Laravel for backend; PostgreSQL, MongoDB for databases; and AWS, Google Cloud, Vercel for hosting.' },
-  { q: 'How do I get started with Bits and Bytes IT Solution?', a: "Contact us through our website, WhatsApp, phone, or email for a free consultation. We'll understand your needs and create a custom strategy for your business within 48 hours." }
 ]
 
 const STATS = [
@@ -977,33 +974,29 @@ const Home = () => {
       <SimpleHeroSlider />
 
       {/* ==================== BRAND SLIDER ==================== */}
-      <section className='brand-section py-12 bg-white border-b border-slate-100' aria-label='Trusted Partners'>
-        <div className='text-center mb-8'>
-          <span className='text-xs font-bold uppercase tracking-[0.3em] text-slate-400'>
-            Trusted by Innovative Companies Across India
-          </span>
+    <section className='brand-section' aria-label='Trusted Partners'>
+      <div className='text-center'>
+        <span className='text-xs font-bold uppercase tracking-[0.3em] text-slate-400'>
+          Trusted by Innovative Companies Across India
+        </span>
+      </div>
+      
+      <div className='brand-ticker-wrapper overflow-hidden'>
+        <div className='brand-track flex animate-brand-scroll'>
+          {[...BRANDS, ...BRANDS].map((logo, i) => (
+            <div key={i} className='flex-shrink-0'>
+              <img 
+                src={logo} 
+                alt='Trusted Partner' 
+                loading='lazy'
+                className='brand-logo'
+              />
+            </div>
+          ))}
         </div>
-        <div className='brand-ticker-wrapper overflow-hidden'>
-          <div className='brand-track flex animate-brand-scroll'>
-            {[...BRANDS, ...BRANDS].map((logo, i) => (
-              <div key={i} className='flex-shrink-0 px-6'>
-                <img 
-                  src={logo} 
-                  alt='Trusted Partner' 
-                  loading='lazy'
-                  className='brand-logo'
-                  style={{
-                    width: '140px',
-                    height: '60px',
-                    objectFit: 'contain',
-                    objectPosition: 'center'
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
+
 
       {/* ==================== STATS SECTION ==================== */}
       <section className='py-16 bg-gradient-to-b from-white to-slate-50' aria-label='Statistics'>
@@ -1017,128 +1010,241 @@ const Home = () => {
       </section>
 
       {/* ==================== BUSINESS GROWTH SECTION ==================== */}
-      <section className='py-20 bg-white' aria-label='Business Growth'>
-        <div className='container mx-auto px-4 md:px-6'>
-          <div className='grid lg:grid-cols-2 gap-16 items-center'>
-            
-            {/* Left Content */}
-            <div>
-              <div className='inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full bg-green-50 text-green-600 text-xs font-bold tracking-widest uppercase'>
-                <TrendingUp size={14} /> Proven Results
-              </div>
-              <h2 className='text-3xl md:text-4xl font-black text-slate-900 mb-4'>
-                Accelerate Your Business Growth
-              </h2>
-              <p className='text-slate-600 max-w-3xl mb-6 text-lg'>
-                Our data-driven strategies have helped 30+ businesses achieve measurable results. Here's what our clients typically experience within the first 90 days.
-              </p>
+   <section className='py-20 bg-white' aria-label='Business Growth'>
+  <div className='container mx-auto px-4 md:px-6'>
+    <div className='grid lg:grid-cols-2 gap-16 items-center'>
+      
+      {/* Left Content - वही रहेगा */}
+      <div>
+        <div className='inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full bg-green-50 text-green-600 text-xs font-bold tracking-widest uppercase'>
+          <TrendingUp size={14} /> Proven Results
+        </div>
+        <h2 className='text-3xl md:text-4xl font-black text-slate-900 mb-4'>
+          Accelerate Your Business Growth
+        </h2>
+        <p className='text-slate-600 max-w-3xl mb-6 text-lg'>
+          Our data-driven strategies have helped 30+ businesses achieve measurable results. Here's what our clients typically experience within the first 90 days.
+        </p>
 
-              {/* Growth Metrics */}
-              <div className='grid sm:grid-cols-2 gap-6 mb-8'>
-                {GROWTH_METRICS.map((metric, i) => (
-                  <GrowthMetricCard key={i} metric={metric} />
-                ))}
-              </div>
+        {/* Growth Metrics */}
+        <div className='grid sm:grid-cols-2 gap-6 mb-8'>
+          {GROWTH_METRICS.map((metric, i) => (
+            <GrowthMetricCard key={i} metric={metric} />
+          ))}
+        </div>
 
-              <div className='bg-slate-50 rounded-2xl p-6'>
-                <div className='flex items-center gap-3 mb-4'>
-                  <Target className='text-green-500' size={24} />
-                  <h3 className='text-xl font-bold text-slate-900'>Guaranteed Results</h3>
-                </div>
-                <p className='text-slate-600'>
-                  We work on performance-based models. If we don't deliver results, you don't pay.
-                </p>
-              </div>
-            </div>
-
-            {/* Right Image - Growth Chart */}
-            <div className="relative">
-  <div className="absolute -top-6 -right-6 w-40 h-40 bg-green-500/10 rounded-full blur-3xl" />
-
-  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-100 shadow-lg">
-    <div className="text-center mb-6">
-      <div className="inline-flex items-center gap-2 px-4 py-2 mb-2 bg-white rounded-full text-green-600 text-sm font-bold">
-        📈 Growth Timeline
+        <div className='bg-slate-50 rounded-2xl p-6'>
+          <div className='flex items-center gap-3 mb-4'>
+            <Target className='text-green-500' size={24} />
+            <h3 className='text-xl font-bold text-slate-900'>Guaranteed Results</h3>
+          </div>
+          <p className='text-slate-600'>
+            We work on performance-based models. If we don't deliver results, you don't pay.
+          </p>
+        </div>
       </div>
 
-      <h3 className="text-xl font-bold text-slate-900">
-        Typical Growth Journey
-      </h3>
-    </div>
+      {/* Right Image - Growth Chart with Graph */}
+      <div className="relative">
+        <div className="absolute -top-6 -right-6 w-40 h-40 bg-green-500/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl" />
 
-    {/* Timeline Visualization */}
-
-    <div className="space-y-6">
-      {[
-        { month: "Month 1", metric: "20-30%", desc: "Traffic Increase" },
-        { month: "Month 2", metric: "40-50%", desc: "Lead Generation" },
-        { month: "Month 3", metric: "70-100%", desc: "Revenue Growth" },
-        { month: "Month 6", metric: "200-300%", desc: "ROI Achieved" },
-      ].map((item, i) => {
-        // "Month 1" ko split karke alag kar rahe hain taaki design better ho
-        const [label, number] = item.month.split(" "); 
-
-        return (
-          <div key={i} className="flex items-center gap-4">
-            {/* Box Design Updated */}
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 flex flex-col items-center justify-center text-white shadow-lg shrink-0">
-              <span className="text-[10px] font-medium uppercase tracking-wide opacity-90">
-                {label}
-              </span>
-              <span className="text-2xl font-bold leading-none">
-                {number}
-              </span>
-            </div>
-
-            <div className="flex-1">
-              <div className="text-2xl font-black text-green-600">
-                {item.metric}
-              </div>
-
-              <div className="text-slate-600">{item.desc}</div>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  </div>
-</div>
-
+        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-100 shadow-lg relative overflow-hidden">
+          {/* Graph Background Pattern */}
+          <div className="absolute top-0 right-0 w-64 h-64 opacity-10">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#10B981" d="M45.5,-73.9C58.4,-66.5,68.2,-53.8,75.5,-39.9C82.9,-26,87.9,-10.9,86.5,3.6C85.1,18.2,77.2,32.1,66.3,43.1C55.4,54.1,41.5,62.2,27.1,68.4C12.7,74.5,-2.3,78.7,-15.7,76.1C-29.2,73.5,-41,64.1,-52.1,53.1C-63.3,42.1,-73.8,29.5,-78.3,15.1C-82.8,0.7,-81.3,-15.5,-75.5,-30C-69.6,-44.5,-59.4,-57.3,-46.5,-64.7C-33.5,-72.1,-16.8,-74.1,-0.4,-73.6C16,-73.1,32.1,-70.1,45.5,-73.9Z" transform="translate(100 100)" />
+            </svg>
           </div>
 
-          {/* Growth Pillars - Full Width Below */}
-          <div className='mt-20'>
-            <div className='bg-slate-900 rounded-3xl p-8 md:p-12'>
-              <div className='text-center mb-12'>
-                <h3 className='text-2xl md:text-3xl font-bold text-white mb-3'>
-                  The 4 Pillars of Digital Growth
-                </h3>
-                <p className='text-slate-400'>Our holistic approach covers every stage of your customer journey</p>
-              </div>
-              
-              <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
-                {GROWTH_PILLARS.map((pillar, i) => (
-                  <div key={i} className='group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all'>
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${pillar.gradient} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform`}>
-                      <pillar.icon size={24} />
+          <div className="text-center mb-6 relative z-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-2 bg-white rounded-full text-green-600 text-sm font-bold shadow-sm">
+              📈 Growth Timeline
+            </div>
+            <h3 className="text-xl font-bold text-slate-900">
+              Typical Growth Journey
+            </h3>
+          </div>
+
+          {/* Combined Layout: Left Timeline, Right Graph */}
+          <div className="grid md:grid-cols-2 gap-8 relative z-10">
+            {/* Left Side - Timeline */}
+            <div className="space-y-6">
+              {[
+                { month: "Month 1", metric: "20-30%", desc: "Traffic Increase" },
+                { month: "Month 2", metric: "40-50%", desc: "Lead Generation" },
+                { month: "Month 3", metric: "70-100%", desc: "Revenue Growth" },
+                { month: "Month 6", metric: "200-300%", desc: "ROI Achieved" },
+              ].map((item, i) => {
+                const [label, number] = item.month.split(" ");
+                return (
+                  <div key={i} className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 flex flex-col items-center justify-center text-white shadow-lg shrink-0">
+                      <span className="text-[10px] font-medium uppercase tracking-wide opacity-90">
+                        {label}
+                      </span>
+                      <span className="text-2xl font-bold leading-none">
+                        {number}
+                      </span>
                     </div>
-                    <h4 className='text-xl font-bold text-white mb-2'>{pillar.title}</h4>
-                    <p className='text-slate-400 text-sm mb-4'>{pillar.desc}</p>
-                    <div className='space-y-2'>
-                      {pillar.metrics.map((metric, j) => (
-                        <div key={j} className='flex items-center gap-2 text-xs text-slate-300'>
-                          <CircleCheck size={14} className={pillar.color} />
-                          {metric}
-                        </div>
-                      ))}
+                    <div className="flex-1">
+                      <div className="text-2xl font-black text-green-600">
+                        {item.metric}
+                      </div>
+                      <div className="text-slate-600">{item.desc}</div>
                     </div>
                   </div>
-                ))}
+                );
+              })}
+            </div>
+
+            {/* Right Side - Graph */}
+            <div className="bg-white rounded-2xl p-6 border border-green-200 shadow-sm">
+              <div className="text-center mb-4">
+                <h4 className="font-bold text-slate-800">Growth Visualization</h4>
+                <p className="text-sm text-slate-500">Months 1-6 Performance</p>
+              </div>
+              
+              {/* Graph Container */}
+              <div className="relative h-64">
+                {/* Grid Lines */}
+                <div className="absolute inset-0 flex flex-col justify-between">
+                  {[0, 25, 50, 75, 100].map((percent, i) => (
+                    <div key={i} className="flex items-center">
+                      <div className="w-8 text-xs text-slate-400 text-right pr-2">
+                        {percent}%
+                      </div>
+                      <div className="flex-1 border-t border-slate-200"></div>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Bars for each month */}
+                <div className="absolute bottom-0 left-12 right-4 h-48 flex items-end justify-between">
+                  {/* Month 1 */}
+                  <div className="flex flex-col items-center w-1/5">
+                    <div className="w-8 bg-gradient-to-t from-green-400 to-emerald-500 rounded-t-lg" style={{ height: '30%' }}></div>
+                    <div className="text-xs mt-1 font-medium">M1</div>
+                    <div className="text-xs text-slate-500">20-30%</div>
+                  </div>
+                  
+                  {/* Month 2 */}
+                  <div className="flex flex-col items-center w-1/5">
+                    <div className="w-8 bg-gradient-to-t from-green-400 to-emerald-500 rounded-t-lg" style={{ height: '50%' }}></div>
+                    <div className="text-xs mt-1 font-medium">M2</div>
+                    <div className="text-xs text-slate-500">40-50%</div>
+                  </div>
+                  
+                  {/* Month 3 */}
+                  <div className="flex flex-col items-center w-1/5">
+                    <div className="w-8 bg-gradient-to-t from-green-400 to-emerald-500 rounded-t-lg" style={{ height: '85%' }}></div>
+                    <div className="text-xs mt-1 font-medium">M3</div>
+                    <div className="text-xs text-slate-500">70-100%</div>
+                  </div>
+                  
+                  {/* Gap for Month 4-5 (optional) */}
+                  <div className="flex flex-col items-center w-1/5">
+                    <div className="w-8 bg-gradient-to-t from-emerald-400 to-green-600 rounded-t-lg" style={{ height: '60%' }}></div>
+                    <div className="text-xs mt-1 font-medium">M4-5</div>
+                    <div className="text-xs text-slate-500">Steady Growth</div>
+                  </div>
+                  
+                  {/* Month 6 */}
+                  <div className="flex flex-col items-center w-1/5">
+                    <div className="w-8 bg-gradient-to-t from-emerald-400 to-green-600 rounded-t-lg" style={{ height: '100%' }}></div>
+                    <div className="text-xs mt-1 font-medium">M6</div>
+                    <div className="text-xs text-slate-500">200-300%</div>
+                  </div>
+                </div>
+                
+                {/* Growth Line */}
+                <div className="absolute left-12 right-4 bottom-12">
+                  <svg height="120" width="100%">
+                    <path 
+                      d="M0,96 L32,72 L64,40 L96,20 L128,0" 
+                      fill="none" 
+                      stroke="#10B981" 
+                      strokeWidth="2"
+                      strokeDasharray="5,3"
+                    />
+                    {/* Data Points */}
+                    <circle cx="0" cy="96" r="4" fill="#10B981" />
+                    <circle cx="32" cy="72" r="4" fill="#10B981" />
+                    <circle cx="64" cy="40" r="4" fill="#10B981" />
+                    <circle cx="96" cy="20" r="4" fill="#10B981" />
+                    <circle cx="128" cy="0" r="4" fill="#10B981" />
+                  </svg>
+                </div>
+              </div>
+              
+              {/* Graph Legend */}
+              <div className="flex justify-center gap-4 mt-4 pt-4 border-t border-slate-200">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  <span className="text-xs text-slate-600">Growth Metrics</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
+                  <span className="text-xs text-slate-600">Target Achievement</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Bottom Stats */}
+          <div className="mt-8 pt-6 border-t border-green-200">
+            <div className="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <div className="text-2xl font-bold text-green-600">30+</div>
+                <div className="text-sm text-slate-600">Clients</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-green-600">90%</div>
+                <div className="text-sm text-slate-600">Success Rate</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-green-600">6M</div>
+                <div className="text-sm text-slate-600">Avg. ROI Time</div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+
+    {/* Growth Pillars - Full Width Below */}
+    <div className='mt-20'>
+      <div className='bg-slate-900 rounded-3xl p-8 md:p-12'>
+        <div className='text-center mb-12'>
+          <h3 className='text-2xl md:text-3xl font-bold text-white mb-3'>
+            The 4 Pillars of Digital Growth
+          </h3>
+          <p className='text-slate-400'>Our holistic approach covers every stage of your customer journey</p>
+        </div>
+        
+        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
+          {GROWTH_PILLARS.map((pillar, i) => (
+            <div key={i} className='group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all'>
+              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${pillar.gradient} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform`}>
+                <pillar.icon size={24} />
+              </div>
+              <h4 className='text-xl font-bold text-white mb-2'>{pillar.title}</h4>
+              <p className='text-slate-400 text-sm mb-4'>{pillar.desc}</p>
+              <div className='space-y-2'>
+                {pillar.metrics.map((metric, j) => (
+                  <div key={j} className='flex items-center gap-2 text-xs text-slate-300'>
+                    <CircleCheck size={14} className={pillar.color} />
+                    {metric}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ==================== VALUE PROPOSITION ==================== */}
       <section className='py-20 bg-slate-50' aria-label='About Us'>

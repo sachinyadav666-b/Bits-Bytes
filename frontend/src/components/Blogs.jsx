@@ -1,200 +1,137 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Calendar, ArrowRight, Search, Zap } from "lucide-react";
+import { Calendar, ArrowRight, Search, Zap, Tag } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-// ✅ 1. Use HTTP for localhost (Fixes SSL Error)
-// const API_URL = "http://localhost:5000"; 
-const API_URL = 'https://bitsandbytes-sb2k.onrender.com';
+const API_URL = "http://localhost:5000";
+
 const Blogs = () => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
-
   const postsPerPage = 6;
 
-  // Fetch Blogs
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const res = await fetch(`${API_URL}/api/blogs`);
-        const data = await res.json();
-        
-        console.log("Fetched Data:", data); // Debugging
-
-        if (Array.isArray(data)) {
-          setPosts(data);
-        } else {
-          setPosts([]);
-        }
-      } catch (err) {
-        console.error("Blog fetch error:", err);
-        setPosts([]);
-      }
-    };
-    fetchBlogs();
+    fetch(`${API_URL}/api/blogs`)
+      .then(r => r.json())
+      .then(d => setPosts(Array.isArray(d) ? d : []))
+      .catch(() => setPosts([]));
   }, []);
 
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [search, selectedCategory]);
+  useEffect(() => { setCurrentPage(1); }, [search, selectedCategory]);
 
-  const categories = useMemo(
-    () => ["All", ...new Set(posts.map((p) => p.category))],
-    [posts]
-  );
+  const categories = useMemo(() => ["All", ...new Set(posts.map(p => p.category))], [posts]);
 
   const filtered = useMemo(() => {
     let list = posts;
-    if (search)
-      list = list.filter((p) =>
-        p.title.toLowerCase().includes(search.toLowerCase())
-      );
-    if (selectedCategory !== "All")
-      list = list.filter((p) => p.category === selectedCategory);
+    if (search) list = list.filter(p => p.title.toLowerCase().includes(search.toLowerCase()));
+    if (selectedCategory !== "All") list = list.filter(p => p.category === selectedCategory);
     return list;
   }, [posts, search, selectedCategory]);
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = filtered.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = filtered.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
   const totalPages = Math.ceil(filtered.length / postsPerPage);
 
-  const paginate = (num) => setCurrentPage(num);
-
-  // ✅ 2. Navigation function using SLUG
-  const handleReadMore = (slug) => {
-    if (!slug) {
-        console.error("Slug is undefined for this post!");
-        return;
-    }
-    navigate(`/blogs/${slug}`);
-  };
-
   return (
-    <div className="bg-white text-slate-900 min-h-screen">
-      <header className="relative pt-28 px-6 pb-12">
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start gap-6">
-            <div>
-              <span className="inline-flex gap-2 px-3 py-1.5 mb-4 border rounded-full bg-cyan-50 text-cyan-700 text-xs uppercase font-bold">
-                <Zap size={14} /> Latest Blogs
-              </span>
-              <h1 className="text-4xl md:text-6xl font-black mb-3">
-                Our <span className="text-cyan-600">Blogs</span>
-              </h1>
-            </div>
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap');
+        .blogs-root { font-family: 'DM Sans', sans-serif; background: #f8fafc; min-height: 100vh; }
+        .blogs-root * { box-sizing: border-box; }
+        .display { font-family: 'Syne', sans-serif; }
+        .card { background: #fff; border-radius: 16px; border: 1px solid #e2e8f0; overflow: hidden; cursor: pointer; transition: transform 0.22s ease, box-shadow 0.22s ease; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.09); }
+        .card:hover .card-arrow { transform: translateX(4px); }
+        .card-arrow { transition: transform 0.2s ease; }
+        .cat-btn { padding: 7px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 1.5px solid #e2e8f0; cursor: pointer; transition: all 0.18s ease; background: #fff; color: #64748b; }
+        .cat-btn.active, .cat-btn:hover { background: #0ea5e9; border-color: #0ea5e9; color: #fff; }
+        .page-btn { width: 36px; height: 36px; border-radius: 8px; border: 1.5px solid #e2e8f0; font-size: 13px; font-weight: 700; cursor: pointer; background: #fff; color: #64748b; transition: all 0.15s; }
+        .page-btn.active, .page-btn:hover { background: #0ea5e9; border-color: #0ea5e9; color: #fff; }
+        .search-wrap { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 10px 16px; }
+        .search-wrap:focus-within { border-color: #0ea5e9; }
+        .search-wrap input { border: none; outline: none; font-family: 'DM Sans', sans-serif; font-size: 14px; color: #0f172a; background: transparent; width: 200px; }
+        .img-wrap { position: relative; height: 200px; overflow: hidden; background: #f1f5f9; }
+        .img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .card:hover .img-wrap img { transform: scale(1.04); }
+        .cat-tag { display: inline-block; background: #e0f2fe; color: #0369a1; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.3px; }
+      `}</style>
 
-            <div className="bg-white border rounded-full flex items-center px-4 py-2 shadow-sm">
-              <input
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search articles..."
-                className="bg-transparent outline-none text-slate-900 w-48"
-              />
-              <Search size={18} className="text-gray-400" />
+      <div className="blogs-root">
+        {/* Header */}
+        <div style={{ background: '#0f172a', padding: '64px 24px 48px' }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(56,189,248,0.12)', border: '1px solid rgba(56,189,248,0.25)', borderRadius: 20, padding: '5px 14px', marginBottom: 20 }}>
+              <Zap size={13} style={{ color: '#38bdf8' }} />
+              <span style={{ color: '#38bdf8', fontSize: 11, fontWeight: 700, letterSpacing: '1px' }}>LATEST ARTICLES</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: 20 }}>
+              <h1 className="display" style={{ fontSize: 'clamp(36px,6vw,64px)', fontWeight: 800, color: '#fff', lineHeight: 1.05, margin: 0 }}>
+                Our <span style={{ color: '#38bdf8' }}>Blog</span>
+              </h1>
+              <div className="search-wrap">
+                <Search size={15} style={{ color: '#94a3b8', flexShrink: 0 }} />
+                <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search articles…" />
+              </div>
             </div>
           </div>
         </div>
-      </header>
 
-      <main className="container mx-auto px-6 pb-32 grid grid-cols-1 lg:grid-cols-4 gap-10">
-        <div className="lg:col-span-3 space-y-10">
-          <div className="grid md:grid-cols-2 gap-8">
-            {currentPosts.map((post) => (
-              <article
-                key={post._id}
-                // ✅ 3. Passing SLUG to the handler
-                onClick={() => handleReadMore(post.slug)} 
-                className="bg-white border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl cursor-pointer transition-all"
-              >
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={post.image}
-                    className="w-full h-full object-cover"
-                    alt="thumb"
-                  />
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '36px 24px 64px' }}>
+          {/* Category filters */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 32 }}>
+            {categories.map(c => (
+              <button key={c} className={`cat-btn${selectedCategory === c ? ' active' : ''}`} onClick={() => setSelectedCategory(c)}>{c}</button>
+            ))}
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 24 }}>
+            {currentPosts.map(post => (
+              <article key={post._id} className="card" onClick={() => post.slug && navigate(`/blogs/${post.slug}`)}>
+                <div className="img-wrap">
+                  {post.image
+                    ? <img src={post.image} alt={post.title} />
+                    : <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}><Tag size={28} style={{ color: '#cbd5e1' }} /></div>
+                  }
                 </div>
-
-                <div className="p-6 flex flex-col">
-                  <div className="text-xs text-gray-500 mb-3 flex gap-3 font-medium">
-                    <span className="text-cyan-600 bg-cyan-50 px-2 py-0.5 rounded">
-                      {post.category}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Calendar size={12} /> {new Date(post.createdAt).toDateString()} 
+                <div style={{ padding: '20px 22px 22px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+                    <span className="cat-tag">{post.category}</span>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: 5, color: '#94a3b8', fontSize: 12 }}>
+                      <Calendar size={11} /> {new Date(post.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                     </span>
                   </div>
-
-                  <h3 className="font-bold text-xl mb-3">{post.title}</h3>
-
-                  <div
-                    className="text-gray-600 text-sm line-clamp-3"
-                    dangerouslySetInnerHTML={{
-                      __html: post.content ? post.content.substring(0, 120) + "..." : "",
-                    }}
+                  <h3 className="display" style={{ fontSize: 17, fontWeight: 700, color: '#0f172a', marginBottom: 10, lineHeight: 1.35 }}>{post.title}</h3>
+                  <div style={{ fontSize: 13, color: '#64748b', lineHeight: 1.6, marginBottom: 16,
+                    display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+                    dangerouslySetInnerHTML={{ __html: post.content?.substring(0, 140) + '…' }}
                   />
-
-                  <button className="mt-4 text-cyan-600 font-bold text-sm flex gap-1">
-                    Read Article <ArrowRight size={16} />
-                  </button>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#0ea5e9', fontWeight: 700, fontSize: 13 }}>
+                    Read Article <ArrowRight size={14} className="card-arrow" />
+                  </div>
                 </div>
               </article>
             ))}
 
             {filtered.length === 0 && (
-              <div className="col-span-2 text-center py-10 text-gray-500 bg-gray-50 border rounded-xl">
-                No blogs found.
+              <div style={{ gridColumn: '1/-1', textAlign: 'center', padding: '64px 24px', color: '#94a3b8', background: '#fff', borderRadius: 16, border: '1px solid #e2e8f0' }}>
+                <Search size={32} style={{ margin: '0 auto 12px', opacity: 0.3 }} />
+                <div style={{ fontWeight: 600, fontSize: 15 }}>No posts found</div>
               </div>
             )}
           </div>
 
+          {/* Pagination */}
           {totalPages > 1 && (
-            <div className="flex justify-center mt-8">
-              <div className="flex gap-2 bg-white border rounded-xl p-2">
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                  (num) => (
-                    <button
-                      key={num}
-                      onClick={() => paginate(num)}
-                      className={`px-4 py-2 rounded-lg font-bold text-sm ${
-                        currentPage === num
-                          ? "bg-cyan-600 text-white"
-                          : "text-gray-600"
-                      }`}
-                    >
-                      {num}
-                    </button>
-                  )
-                )}
-              </div>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 40 }}>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(n => (
+                <button key={n} className={`page-btn${currentPage === n ? ' active' : ''}`} onClick={() => setCurrentPage(n)}>{n}</button>
+              ))}
             </div>
           )}
         </div>
-
-        <aside className="space-y-8">
-          <div className="bg-white border p-6 rounded-xl shadow-sm">
-            <h4 className="font-bold mb-4">Categories</h4>
-            <div className="flex flex-col gap-2">
-              {categories.map((c) => (
-                <button
-                  key={c}
-                  onClick={() => setSelectedCategory(c)}
-                  className={`px-4 py-2 rounded-lg text-left ${
-                    selectedCategory === c
-                      ? "bg-cyan-50 text-cyan-700"
-                      : "text-gray-600"
-                  }`}
-                >
-                  {c}
-                </button>
-              ))}
-            </div>
-          </div>
-        </aside>
-      </main>
-    </div>
+      </div>
+    </>
   );
 };
 

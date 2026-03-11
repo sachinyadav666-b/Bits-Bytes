@@ -12,7 +12,7 @@ export default function MainLayout() {
       <Navbar />
       {/* <HeroSection /> */}
       {/* Dynamic page content */}
-      <Box component="main" sx={{ minHeight: "70vh", mt: { xs: 8, sm: 10 } }}>
+      <Box component="main" sx={{ minHeight: "70vh", mt:  8.5  }}>
         <Outlet />  {/*  Page content will render here */}
       </Box>
       {/* Always visible footer */}
